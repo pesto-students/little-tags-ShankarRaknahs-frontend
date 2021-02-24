@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SubCategory = (SubCategory) => {
+const SubCategory = ({ subCategory }) => {
   const classes = useStyles();
 
   //subCategory to be verified later
