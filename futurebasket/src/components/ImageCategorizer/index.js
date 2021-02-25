@@ -33,23 +33,30 @@ const useStyles = makeStyles((theme) => ({
 const ImageCategorizer = ({ element }) => {
   const classes = useStyles();
 
+  const imageStyle = element.image.style;
+  const imagePath = element.image.path;
+  const positions = element.positions;
+
   return (
-    <div style={element.image.style}>
-      <Image src={element.image.path}></Image>
-      {element.iconPosition.map((position, index) => {
+    <div style={imageStyle}>
+      <Image src={imagePath}></Image>
+      {positions.map((position) => {
+        const id = position.id;
+        const style = position.style;
+        const title = position.title;
+
         return (
           <Button
             variant='contained'
-            // color='#00beff'
-            style={position}
+            style={style}
             className={classes.button}
             startIcon={
-              <Icon className={classes.icon} key={index}>
+              <Icon className={classes.icon} key={id}>
                 add_circle
               </Icon>
             }
           >
-            {position.title}
+            {title}
           </Button>
         );
       })}

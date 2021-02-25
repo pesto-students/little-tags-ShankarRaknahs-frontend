@@ -13,14 +13,12 @@ const useStyles = makeStyles((theme) => ({
 const SubCategory = ({ category }) => {
   const classes = useStyles();
 
-  //subCategory to be verified later
-
   return (
     <div className={classes.root}>
-      {menModal.map((obj, index) => {
+      {menModal.map((obj) => {
         return (
-          <Paper key={index} elevation={0}>
-            <ImageCategorizer key={index} element={obj} />
+          <Paper key={obj.id} elevation={0}>
+            <ImageCategorizer key={obj.id} element={obj} />
           </Paper>
         );
       })}

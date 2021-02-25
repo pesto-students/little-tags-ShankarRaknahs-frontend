@@ -5,6 +5,7 @@ import menInShorts from '../../assets/categorizer/man-shorts.jpg';
 import menInHoodies from '../../assets/categorizer/man-hoodie.jpg';
 
 const menInSuit = {
+  id: 1,
   title: 'Men-In-Suit',
   image: {
     path: menInSuits,
@@ -14,30 +15,41 @@ const menInSuit = {
       position: 'relative',
     },
   },
-  iconPosition: [
+  positions: [
     {
+      id: 1,
       title: 'Suit',
-      position: 'absolute',
-      top: '20%',
-      right: '20%',
+      style: {
+        position: 'absolute',
+        top: '20%',
+        right: '20%',
+      },
     },
     {
+      id: 2,
       title: 'Suit-Pant',
-      position: 'absolute',
-      top: '60%',
-      right: '12%',
+      style: {
+        position: 'absolute',
+        top: '60%',
+        right: '12%',
+      },
     },
     {
+      id: 3,
       title: 'Formal-Shoes',
-      position: 'absolute',
-      top: '85%',
-      right: '10%',
+      style: {
+        position: 'absolute',
+        top: '85%',
+        right: '10%',
+      },
+
       // width: '35%',
     },
   ],
 };
 
 const menInFormal = {
+  id: 2,
   title: 'Men-In-Formals',
   image: {
     path: menInFormals,
@@ -47,30 +59,40 @@ const menInFormal = {
       position: 'relative',
     },
   },
-  iconPosition: [
+  positions: [
     {
+      id: 1,
       title: 'Formal-Shirt',
-      position: 'absolute',
-      top: '20%',
-      right: '10%',
+      style: {
+        position: 'absolute',
+        top: '20%',
+        right: '10%',
+      },
     },
     {
+      id: 2,
       title: 'Causual-Pant',
-      position: 'absolute',
-      top: '60%',
-      right: '12%',
+      style: {
+        position: 'absolute',
+        top: '60%',
+        right: '12%',
+      },
     },
     {
+      id: 3,
       title: 'Formal-Shoes',
-      position: 'absolute',
-      top: '80%',
-      right: '14%',
+      style: {
+        position: 'absolute',
+        top: '80%',
+        right: '14%',
+      },
       // width: '35%',
     },
   ],
 };
 
 const menInCausual = {
+  id: 3,
   title: 'Men-In-Causuals',
   image: {
     path: menInCausuals,
@@ -80,29 +102,39 @@ const menInCausual = {
       position: 'relative',
     },
   },
-  iconPosition: [
+  positions: [
     {
+      id: 1,
       title: 'Causual-Shirt',
-      position: 'absolute',
-      top: '10%',
-      left: '65%',
+      style: {
+        position: 'absolute',
+        top: '10%',
+        left: '65%',
+      },
     },
     {
+      id: 2,
       title: 't-shirt',
-      position: 'absolute',
-      top: '60%',
-      left: '55%',
+      style: {
+        position: 'absolute',
+        top: '60%',
+        left: '55%',
+      },
     },
     {
+      id: 3,
       title: 'causual-shoes',
-      position: 'absolute',
-      top: '85%',
-      left: '40%',
+      style: {
+        position: 'absolute',
+        top: '85%',
+        left: '40%',
+      },
     },
   ],
 };
 
 const menInShort = {
+  id: 4,
   title: 'Men-In-Shorts',
   image: {
     path: menInShorts,
@@ -112,29 +144,39 @@ const menInShort = {
       position: 'relative',
     },
   },
-  iconPosition: [
+  positions: [
     {
+      id: 1,
       title: 'Causual-Shirt',
-      position: 'absolute',
-      top: '12%',
-      left: '60%',
+      style: {
+        position: 'absolute',
+        top: '12%',
+        left: '60%',
+      },
     },
     {
+      id: 2,
       title: 'shorts',
-      position: 'absolute',
-      top: '55%',
-      left: '60%',
+      style: {
+        position: 'absolute',
+        top: '55%',
+        left: '60%',
+      },
     },
     {
+      id: 3,
       title: 'sneakers',
-      position: 'absolute',
-      top: '80%',
-      left: '64%',
+      style: {
+        position: 'absolute',
+        top: '80%',
+        left: '64%',
+      },
     },
   ],
 };
 
 const menInHoodie = {
+  id: 5,
   title: 'Men-In-Hoodie',
   image: {
     path: menInHoodies,
@@ -144,12 +186,15 @@ const menInHoodie = {
       position: 'relative',
     },
   },
-  iconPosition: [
+  positions: [
     {
+      id: 1,
       title: 'hoodie',
-      position: 'absolute',
-      top: '30%',
-      left: '40%',
+      style: {
+        position: 'absolute',
+        top: '30%',
+        left: '40%',
+      },
     },
   ],
 };
