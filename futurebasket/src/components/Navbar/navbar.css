@@ -35,7 +35,7 @@
 .search-icon{
     position: absolute;
     left:1rem;
-    top:1rem
+    top:0.5rem
 }
 .right-nav-items{
     display: flex;
@@ -50,9 +50,6 @@
 .user-icon{
     padding: 1rem
 }
-.language{
-    padding: 0.5rem;
-    color:#BCBCCB;
-    font-size: 24px;
-    font-weight: bold;
+.language-select {
+    margin-left: 0.5rem;
 }
