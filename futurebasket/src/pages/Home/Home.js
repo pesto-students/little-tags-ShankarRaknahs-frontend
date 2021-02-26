@@ -1,13 +1,12 @@
 import React from 'react';
-import Layout from '../../components/Layout';
-import SubCategory from '../../components/SubCategory';
+import Navbar from '../../components/Navbar/Navbar';
+import Categories from '../../components/Categories/Categories';
 
 function Home() {
   return (
     <div className='homepage-container'>
-      <Layout>
-        <SubCategory category={'men'} />
-      </Layout>
+       <Navbar />
+       <Categories />
     </div>
   );
 }

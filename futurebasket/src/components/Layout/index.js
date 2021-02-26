@@ -6,8 +6,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <section className='fixed-layout'>
-        <Navbar />
-        <Categories />
+       
       </section>
       <section className='routing-layout'>{children}</section>
     </>
