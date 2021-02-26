@@ -1,92 +1,63 @@
-import menInSuits from '../../assets/categorizer/men-in-suit-3.jpg';
-import menInFormals from '../../assets/categorizer/men-formal-1.jpg';
-import menInCausuals from '../../assets/categorizer/men-causual-wear.jpg';
-import menInShorts from '../../assets/categorizer/man-shorts.jpg';
-import menInHoodies from '../../assets/categorizer/man-hoodie.jpg';
+import menInSports from '../../assets/categorizer/men/men-random.jpg';
+import menInJeans from '../../assets/categorizer/men/men-in-causuals.jpg';
+import menInCausuals from '../../assets/categorizer/men/men-in-suits.jpg';
 
-const menInSuit = {
+const menInSport = {
   id: 1,
-  title: 'Men-In-Suit',
+  title: 'Men-In-Sports',
   image: {
-    path: menInSuits,
-    style: {
-      height: 500,
-      width: 470,
-      position: 'relative',
-    },
+    path: menInSports,
   },
   positions: [
     {
       id: 1,
-      title: 'Suit',
+      title: 'causual-dress',
       style: {
         position: 'absolute',
-        top: '20%',
-        right: '20%',
+        top: '23%',
+        left: '15%',
       },
     },
     {
       id: 2,
-      title: 'Suit-Pant',
+      title: 'sports-shoes',
       style: {
         position: 'absolute',
-        top: '60%',
-        right: '12%',
+        top: '55%',
+        left: '45%',
       },
-    },
-    {
-      id: 3,
-      title: 'Formal-Shoes',
-      style: {
-        position: 'absolute',
-        top: '85%',
-        right: '10%',
-      },
-
-      // width: '35%',
     },
   ],
 };
 
-const menInFormal = {
+const menInJean = {
   id: 2,
-  title: 'Men-In-Formals',
+  title: 'Men-In-Causuals',
   image: {
-    path: menInFormals,
+    path: menInJeans,
     style: {
-      height: 500,
-      width: 470,
       position: 'relative',
+      margin: 10,
     },
   },
   positions: [
     {
       id: 1,
-      title: 'Formal-Shirt',
+      title: 'T-Shirt',
       style: {
         position: 'absolute',
-        top: '20%',
-        right: '10%',
+        top: '25%',
+        left: '30%',
       },
     },
     {
       id: 2,
-      title: 'Causual-Pant',
+      title: 'sports-tracks',
       style: {
         position: 'absolute',
-        top: '60%',
-        right: '12%',
+        top: '65%',
+        left: '35%',
       },
-    },
-    {
-      id: 3,
-      title: 'Formal-Shoes',
-      style: {
-        position: 'absolute',
-        top: '80%',
-        right: '14%',
-      },
-      // width: '35%',
     },
   ],
 };
@@ -97,112 +68,30 @@ const menInCausual = {
   image: {
     path: menInCausuals,
     style: {
-      height: 500,
-      width: 470,
       position: 'relative',
+      margin: 10,
     },
   },
   positions: [
     {
       id: 1,
-      title: 'Causual-Shirt',
-      style: {
-        position: 'absolute',
-        top: '10%',
-        left: '65%',
-      },
-    },
-    {
-      id: 2,
-      title: 't-shirt',
-      style: {
-        position: 'absolute',
-        top: '60%',
-        left: '55%',
-      },
-    },
-    {
-      id: 3,
-      title: 'causual-shoes',
-      style: {
-        position: 'absolute',
-        top: '85%',
-        left: '40%',
-      },
-    },
-  ],
-};
-
-const menInShort = {
-  id: 4,
-  title: 'Men-In-Shorts',
-  image: {
-    path: menInShorts,
-    style: {
-      height: 500,
-      width: 470,
-      position: 'relative',
-    },
-  },
-  positions: [
-    {
-      id: 1,
-      title: 'Causual-Shirt',
-      style: {
-        position: 'absolute',
-        top: '12%',
-        left: '60%',
-      },
-    },
-    {
-      id: 2,
-      title: 'shorts',
-      style: {
-        position: 'absolute',
-        top: '55%',
-        left: '60%',
-      },
-    },
-    {
-      id: 3,
-      title: 'sneakers',
-      style: {
-        position: 'absolute',
-        top: '80%',
-        left: '64%',
-      },
-    },
-  ],
-};
-
-const menInHoodie = {
-  id: 5,
-  title: 'Men-In-Hoodie',
-  image: {
-    path: menInHoodies,
-    style: {
-      height: 500,
-      width: 470,
-      position: 'relative',
-    },
-  },
-  positions: [
-    {
-      id: 1,
-      title: 'hoodie',
+      title: 'Suits',
       style: {
         position: 'absolute',
         top: '30%',
-        left: '40%',
+        left: '30%',
+      },
+    },
+    {
+      id: 2,
+      title: 'Formal-Pants',
+      style: {
+        position: 'absolute',
+        top: '80%',
+        left: '20%',
       },
     },
   ],
 };
 
-export const menModal = [
-  menInSuit,
-  menInFormal,
-  menInCausual,
-  menInShort,
-  menInHoodie,
-];
+export const menModal = [menInJean, menInCausual, menInSport];
