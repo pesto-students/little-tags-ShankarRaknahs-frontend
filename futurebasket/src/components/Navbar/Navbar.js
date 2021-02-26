@@ -5,6 +5,7 @@ import { PersonOutlineOutlined } from "@material-ui/icons";
 import SearchIcon from "@material-ui/icons/Search";
 import Select from "@material-ui/core/Select";
 import { MenuItem } from "@material-ui/core";
+import COLORS from '../../config/colors.config';
 import "./navbar.css";
 
 function Navbar() {
@@ -28,10 +29,10 @@ function Navbar() {
       <div className="right-nav-items">
         <div className="globe-icon">
           <LanguageIcon
-            style={{ color: "#BCBCCB", fontSize: "2.5em" }}
+            style={{ color: `${COLORS.SILVERSAND}`, fontSize: "2.5em" }}
           ></LanguageIcon>
           <div className="language-select">
-            <Select value={"En"} style={{ color: "white", fontWeight: "bold" }}>
+            <Select value={"En"} style={{ color: `${COLORS.SILVERSAND}`, fontWeight: "bold" }}>
               <MenuItem value={"En"}>En</MenuItem>
               <MenuItem value={"Es"}>Es</MenuItem>
             </Select>
@@ -39,7 +40,7 @@ function Navbar() {
         </div>
         <div className="user-icon">
           <PersonOutlineOutlined
-            style={{ color: "#BCBCCB", fontSize: "2.5em" }}
+            style={{ color: `${COLORS.SILVERSAND}`, fontSize: "2.5em" }}
           ></PersonOutlineOutlined>
         </div>
       </div>
