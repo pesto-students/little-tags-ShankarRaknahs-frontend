@@ -1,8 +1,10 @@
 const COLORS = {
   PRIMARY: '#00327C',
   SECONDARY: '#00BEFF',
+  TITLE1: '#F1011E',
   DARK: '#000000',
-  SILVERSAND: '#BCBCCB',
+  SILVERSAND: '#848484',
+  ICON: '#BCBCCB',
 };
 
 export default COLORS;

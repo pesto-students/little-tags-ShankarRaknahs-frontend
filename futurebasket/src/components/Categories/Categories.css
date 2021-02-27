@@ -1,12 +1,13 @@
 .categories {
     display: flex;
     align-items: center;
+    align-self: center;
     height: 5vh;
     margin-left: 2rem;
 }
 .divider {
     background-color: #F0F0F7;
-    height: 3vh;
+    height: 0.3vh;
 }
 .category {
     margin:0  5rem 0 0;
@@ -16,6 +17,7 @@
 }
 .selectionBar {
     height: 0.3rem;
+    margin-top: 0.3rem;
     border-radius: 1em;
     background-color: #004391;
 }

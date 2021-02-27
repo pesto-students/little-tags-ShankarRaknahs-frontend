@@ -18,14 +18,13 @@ const useStyles = makeStyles((theme) => ({
 
 const SubCategory = ({ handleCategory }) => {
   const classes = useStyles();
-  
-  //Parsing the params from url to get the category.
+
   let { categoryName } = useParams();
-  if(!categoryName) categoryName = "Men"; 
- 
+  if (!categoryName) categoryName = 'Men';
+
   useEffect(() => {
     handleCategory(categoryName);
-  }, [categoryName])
+  }, [categoryName]);
 
   return (
     <div className={classes.root}>
