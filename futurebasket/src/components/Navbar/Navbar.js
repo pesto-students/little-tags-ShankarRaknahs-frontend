@@ -59,6 +59,7 @@ export default function Navbar() {
           <Title {...app} />
           <div className={classes.grow} />
           <Searchbar />
+          {/* <div className={classes.grow} /> */}
           <div className={classes.sectionDesktop}>
             <LanguageInt id={menuId} />
             <Notification id={menuId} />
@@ -72,7 +73,7 @@ export default function Navbar() {
               onClick={handleMobileMenuOpen}
               color='inherit'
             >
-              <More />
+              <More className={classes.more} />
             </IconButton>
           </div>
         </Toolbar>

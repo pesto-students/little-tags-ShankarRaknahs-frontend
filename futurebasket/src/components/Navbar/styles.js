@@ -21,4 +21,7 @@ export const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  more: {
+    marginLeft: '30%',
+  },
 }));
