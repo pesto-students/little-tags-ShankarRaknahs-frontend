@@ -5,8 +5,8 @@ import Categories from '../../components/Categories/Categories';
 function Home() {
   return (
     <div className='homepage-container'>
-       <Navbar />
-       <Categories />
+      <Navbar />
+      <Categories />
     </div>
   );
 }

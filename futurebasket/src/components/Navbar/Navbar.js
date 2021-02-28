@@ -1,51 +1,83 @@
-import React from "react";
-import logo from "../../assets/logo.png";
-import LanguageIcon from "@material-ui/icons/Language";
-import { PersonOutlineOutlined } from "@material-ui/icons";
-import SearchIcon from "@material-ui/icons/Search";
-import Select from "@material-ui/core/Select";
-import { MenuItem } from "@material-ui/core";
-import COLORS from '../../config/colors.config';
-import "./navbar.css";
+import React from 'react';
+import { IconButton, Menu, MenuItem, AppBar, Toolbar } from '@material-ui/core';
 
-function Navbar() {
+import { More } from '@material-ui/icons/';
+
+import { useStyles } from './styles';
+
+import Searchbar from '../Search/SearchBar';
+import LanguageInt from '../Language/Language';
+import Profile from '../Profile/Profile';
+import APP from '../../config/app.config';
+import Notification from '../Notifications/Notification';
+import Title from '../Title/Title';
+
+export default function Navbar() {
+  const classes = useStyles();
+
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const menuId = APP.DESKTOP_ID;
+  const mobileMenuId = APP.MOBILE_ID;
+  const app = { firstName: APP.FIRSTNAME, lastName: APP.LASTNAME };
+
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <LanguageInt id={mobileMenuId} />
+      </MenuItem>
+      <MenuItem>
+        <Notification id={mobileMenuId} />
+      </MenuItem>
+      <MenuItem>
+        <Profile id={mobileMenuId} />
+      </MenuItem>
+    </Menu>
+  );
+
   return (
-    <div className="navbar-container">
-      <div className="left-nav-items">
-        <div className="logo">
-          <img src={logo} alt="logo"></img>
-        </div>
-        <div className="search-bar">
-          <input
-            className="search-input"
-            type="text"
-            placeholder="Search for products, brands ..."
-          />
-          <div className="search-icon">
-            <SearchIcon style={{ fontSize: "2.5em" }}></SearchIcon>
+    <div className={classes.grow}>
+      <AppBar className={classes.appbar} position='static'>
+        <Toolbar>
+          <Title {...app} />
+          <div className={classes.grow} />
+          <Searchbar />
+          <div className={classes.sectionDesktop}>
+            <LanguageInt id={menuId} />
+            <Notification id={menuId} />
+            <Profile id={menuId} />
           </div>
-        </div>
-      </div>
-      <div className="right-nav-items">
-        <div className="globe-icon">
-          <LanguageIcon
-            style={{ color: `${COLORS.SILVERSAND}`, fontSize: "2.5em" }}
-          ></LanguageIcon>
-          <div className="language-select">
-            <Select value={"En"} style={{ color: `${COLORS.SILVERSAND}`, fontWeight: "bold" }}>
-              <MenuItem value={"En"}>En</MenuItem>
-              <MenuItem value={"Es"}>Es</MenuItem>
-            </Select>
+          <div className={classes.sectionMobile}>
+            <IconButton
+              aria-label='show more'
+              aria-controls={mobileMenuId}
+              aria-haspopup='true'
+              onClick={handleMobileMenuOpen}
+              color='inherit'
+            >
+              <More />
+            </IconButton>
           </div>
-        </div>
-        <div className="user-icon">
-          <PersonOutlineOutlined
-            style={{ color: `${COLORS.SILVERSAND}`, fontSize: "2.5em" }}
-          ></PersonOutlineOutlined>
-        </div>
-      </div>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
     </div>
   );
 }
-
-export default Navbar;
