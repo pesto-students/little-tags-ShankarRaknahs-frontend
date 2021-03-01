@@ -1,5 +1,6 @@
 let locale = localStorage.getItem("language");
 if(!locale || !locale.includes["es", "en"]) locale = 'en';
+
 const localeReducer = (state = locale, action) => {
     console.log({state});
     switch (action.type) {

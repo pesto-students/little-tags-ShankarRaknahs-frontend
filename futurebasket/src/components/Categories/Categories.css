@@ -21,3 +21,15 @@
     border-radius: 1em;
     background-color: #004391;
 }
+
+@media screen and (max-width: 600px) {
+    .category {
+        font-size: 1em;
+        margin: 0rem 1rem;
+    }
+    .categories {
+        margin: 0;
+         overflow-x: scroll;
+        max-width: fit-content;
+    }
+}
