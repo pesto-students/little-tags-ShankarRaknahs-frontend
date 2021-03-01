@@ -8,6 +8,7 @@ const COLORS = {
   ICON: '#BCBCCB',
   GOOGLE: '#4285F4',
   FACEBOOK: '#3B5998',
+  ACTION: '#FF533A',
 };
 
 export default COLORS;

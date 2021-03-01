@@ -4,7 +4,9 @@ import { TabPanel, a11yProps } from './utilities/utilities';
 
 import Google from '../Login/GoogleSignIn';
 import Facebook from '../Login/FacebookSignIn';
-import useStyles from './styles';
+import PhoneAuth from '../Login/PhoneAuth';
+
+import { useStyles } from './styles';
 
 const LoginForm = () => {
   const classes = useStyles();
@@ -32,10 +34,12 @@ const LoginForm = () => {
       <TabPanel value={value} index={0}>
         <Google action={'sign in'} />
         <Facebook action={'Sign in'} />
+        <PhoneAuth action={'Request OTP'} />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Google action={'sign up'} className={classes.btn} />
         <Facebook action={'Sign up'} className={classes.btn} />
+        <PhoneAuth action={'Request OTP'} />
       </TabPanel>
     </>
   );

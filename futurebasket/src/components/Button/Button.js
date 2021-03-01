@@ -4,10 +4,11 @@ const ButtonPrimary = ({ btnClr, textClr, children }) => {
   return (
     <Button
       variant='contained'
+      fullWidth
       style={{
         backgroundColor: btnClr,
         color: textClr,
-        marginTop: '10%',
+        marginBottom: '10%',
         alignSelf: 'center',
       }}
     >
