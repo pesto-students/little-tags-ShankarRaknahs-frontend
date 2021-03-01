@@ -1,12 +1,12 @@
 export const setEnglish = (data) => {
     return {
-        type: "En"
+        type: "en"
     }
 }
 
 export const setSpanish = (data) => {
     return {
-        type: "Es"
+        type: "es"
     }
 }
 

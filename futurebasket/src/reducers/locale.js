@@ -1,9 +1,9 @@
-const localeReducer = (state = "Es", action) => {
+const localeReducer = (state = "es", action) => {
     switch (action.type) {
-        case 'En':
-            return 'Es';
-        case 'Es':
-            return 'En';
+        case 'en':
+            return 'es';
+        case 'es':
+            return 'en';
         default:
             return state;
     }

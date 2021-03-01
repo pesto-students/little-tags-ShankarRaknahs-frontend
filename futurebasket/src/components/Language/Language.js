@@ -16,7 +16,7 @@ const LanguageInt = ({ id }) => {
 
   const handleChange = (event) => {
     const selectedLang = event.target.value;
-    if(selectedLang === 'Es')
+    if(selectedLang === 'es')
       dispatch(setEnglish());
     else 
       dispatch(setSpanish());
@@ -44,10 +44,10 @@ const LanguageInt = ({ id }) => {
               id: 'outlined-age-native-simple',
             }}
           >
-            <option value = "En">
+            <option value = "en">
               {id === APP.DESKTOP_ID ? 'English' : 'En'}
             </option>
-            <option value = "Es">
+            <option value = "es">
               {id === APP.DESKTOP_ID ? 'Spanish' : 'Es'}
             </option>
           </Select>
