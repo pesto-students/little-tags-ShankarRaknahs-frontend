@@ -4,7 +4,7 @@ import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import COLORS from '../../config/colors.config';
 import Box from '@material-ui/core/Box';
-import { Zoom } from '@material-ui/core';
+import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -45,7 +45,9 @@ const ImageCategorizer = ({ element }) => {
 
   return (
     <div className={classes.image} style={imageStyle}>
-      <img src={imagePath} alt={title}></img>
+      <Paper variant='outlined'>
+        <img src={imagePath} alt={title}></img>
+      </Paper>
       {positions.map((position) => {
         const id = position.id;
         const style = position.style;
