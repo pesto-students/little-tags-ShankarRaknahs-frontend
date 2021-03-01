@@ -1,9 +1,12 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import './App.css';
+import { IntlProvider } from 'react-intl';
 
 function App() {
+    // const [locale, setLocale] = useState("en")
+  
   return (
+    <IntlProvider>
     <Router>
       <Switch>
         <Route path='/'>
@@ -11,6 +14,7 @@ function App() {
         </Route>
       </Switch>
     </Router>
+    </IntlProvider>
   );
 }
 
