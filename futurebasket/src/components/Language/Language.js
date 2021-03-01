@@ -16,6 +16,7 @@ const LanguageInt = ({ id }) => {
 
   const handleChange = (event) => {
     const selectedLang = event.target.value;
+    localStorage.setItem("language", selectedLang);
     if(selectedLang === 'es')
       dispatch(setEnglish());
     else 
