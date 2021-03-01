@@ -1,0 +1,9 @@
+{
+    "components.categories.Men" : "Men",
+    "components.categories.Women" : "Women",
+    "components.categories.Electronics" : "Electronics",
+    "components.categories.Jewelry" : "Jewelry",
+    "components.drawer.login" : "LOGIN",
+    "components.drawer.newUser" : "SIGN UP"
+
+}
