@@ -1,6 +1,8 @@
-import menInSports from '../../assets/categorizer/men/men-random.jpg';
-import menInJeans from '../../assets/categorizer/men/men-in-causuals.jpg';
-import menInCausuals from '../../assets/categorizer/men/men-in-suits.jpg';
+import menInSports from '../../assets/categorizer/men/men-random1.jpg';
+import menInJeans from '../../assets/categorizer/men/men-in-causuals1.jpg';
+import menInCausuals from '../../assets/categorizer/men/men-in-suits1.jpg';
+import menInRandoms from '../../assets/categorizer/men/boy-in-tshirt1.jpg';
+import menInHoodies from '../../assets/categorizer/men/men-in-hoodie.jpg';
 
 const menInSport = {
   id: 1,
@@ -20,11 +22,11 @@ const menInSport = {
     },
     {
       id: 2,
-      title: 'sports-shoes',
+      title: 'Jean-Pants',
       style: {
         position: 'absolute',
-        top: '55%',
-        left: '45%',
+        top: '65%',
+        left: '25%',
       },
     },
   ],
@@ -46,8 +48,8 @@ const menInJean = {
       title: 'T-Shirt',
       style: {
         position: 'absolute',
-        top: '25%',
-        left: '30%',
+        top: '10%',
+        left: '20%',
       },
     },
     {
@@ -55,8 +57,17 @@ const menInJean = {
       title: 'sports-tracks',
       style: {
         position: 'absolute',
+        top: '45%',
+        left: '20%',
+      },
+    },
+    {
+      id: 3,
+      title: 'sports-shoes',
+      style: {
+        position: 'absolute',
         top: '65%',
-        left: '35%',
+        left: '25%',
       },
     },
   ],
@@ -78,8 +89,8 @@ const menInCausual = {
       title: 'Suits',
       style: {
         position: 'absolute',
-        top: '30%',
-        left: '30%',
+        top: '15%',
+        left: '10%',
       },
     },
     {
@@ -87,11 +98,63 @@ const menInCausual = {
       title: 'Formal-Pants',
       style: {
         position: 'absolute',
-        top: '80%',
+        top: '40%',
+        left: '1%',
+      },
+    },
+  ],
+};
+
+const menInRandom = {
+  id: 4,
+  title: 'Men-In-Random1',
+  image: {
+    path: menInRandoms,
+    style: {
+      position: 'relative',
+      margin: 10,
+    },
+  },
+  positions: [
+    {
+      id: 1,
+      title: 'T-shirts',
+      style: {
+        position: 'absolute',
+        top: '45%',
         left: '20%',
       },
     },
   ],
 };
 
-export const menModal = [menInJean, menInCausual, menInSport];
+const menInHoodie = {
+  id: 4,
+  title: 'Men-In-Hoodie',
+  image: {
+    path: menInHoodies,
+    style: {
+      position: 'relative',
+      margin: 10,
+    },
+  },
+  positions: [
+    {
+      id: 1,
+      title: 'Hoodie',
+      style: {
+        position: 'absolute',
+        top: '45%',
+        left: '20%',
+      },
+    },
+  ],
+};
+
+export const menModal = [
+  menInJean,
+  menInSport,
+  menInRandom,
+  menInCausual,
+  menInHoodie,
+];
