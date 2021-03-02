@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> render correctly (snapshot) 1`] = `undefined`;
+exports[`<Title /> render correctly (snapshot) 1`] = `undefined`;
 
-exports[`<Header /> render correctly using Enzyme (snapshot) 1`] = `
+exports[`<Title /> render correctly using Enzyme (snapshot) 1`] = `
 <Title
   firstName="Future"
   lastName="basket"

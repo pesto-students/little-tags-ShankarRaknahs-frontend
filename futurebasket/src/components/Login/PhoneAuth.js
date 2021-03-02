@@ -1,5 +1,4 @@
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import ButtonPrimary from '../../components/Button/Button';
 import COLORS from '../../config/colors.config';
 import { useStyles } from './styles';
