@@ -4,6 +4,10 @@
     "components.categories.Electronics" : "Electronics",
     "components.categories.Jewelry" : "Jewelry",
     "components.drawer.login" : "LOGIN",
-    "components.drawer.newUser" : "SIGN UP"
-
+    "components.drawer.newUser" : "New User Registration",
+    "components.drawer.signIn" :"SIGN IN",
+    "components.drawer.signUp" : "SIGN UP",
+    "components.drawer.requestOtp": "Request OTP",
+    "components.drawer.signInMobile": "Sign in using Mobile",
+    "components.drawer.enterThePhoneNumber": "Enter the Phone Number"
 }
