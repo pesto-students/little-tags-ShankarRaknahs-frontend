@@ -8,8 +8,7 @@ import APP from '../../config/app.config';
 import { useStyles } from './styles';
 
 const Profile = ({ id }) => {
-  console.log(id);
-
+  
   const classes = useStyles();
   const [isProfile, setProfile] = React.useState(false);
 

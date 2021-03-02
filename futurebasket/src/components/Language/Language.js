@@ -5,21 +5,22 @@ import { Language } from '@material-ui/icons/';
 
 import { useStyles } from './styles';
 import APP from '../../config/app.config';
+import { useSelector, useDispatch } from 'react-redux'
+import { setEnglish, setSpanish } from '../../actions/locale'
 
 const LanguageInt = ({ id }) => {
   const classes = useStyles();
 
-  const [state, setState] = React.useState({
-    language: 'en',
-    name: 'English',
-  });
+  const locale = useSelector((state) => state.localeReducer);
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    const name = event.target.name;
-    setState({
-      ...state,
-      [name]: event.target.value,
-    });
+    const selectedLang = event.target.value;
+    localStorage.setItem("language", selectedLang);
+    if(selectedLang === 'es')
+      dispatch(setEnglish());
+    else 
+      dispatch(setSpanish());
   };
 
   return (
@@ -35,7 +36,7 @@ const LanguageInt = ({ id }) => {
           </IconButton>
           <Select
             native
-            value={state.language}
+            value={locale}
             onChange={handleChange}
             label='Language'
             className={classes.icon}
@@ -44,10 +45,10 @@ const LanguageInt = ({ id }) => {
               id: 'outlined-age-native-simple',
             }}
           >
-            <option value={10}>
+            <option value = "en">
               {id === APP.DESKTOP_ID ? 'English' : 'En'}
             </option>
-            <option value={20}>
+            <option value = "es">
               {id === APP.DESKTOP_ID ? 'Spanish' : 'Es'}
             </option>
           </Select>

@@ -3,6 +3,7 @@ import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 import SubCategory from '../SubCategory/index';
 import COLORS from '../../config/colors.config';
 import './Categories.css';
+import { FormattedMessage } from "react-intl";
 
 function Categories() {
   const categories = ['Men', 'Women', 'Electronics', 'Jewelry'];
@@ -27,7 +28,8 @@ function Categories() {
                   }}
                 >
                   {' '}
-                  {category}{' '}
+                    <FormattedMessage id = {`components.categories.${category}`} defaultMessage = {category} />
+                  {' '}
                 </span>
               }
               {selectedCategory === category && (
@@ -50,7 +52,8 @@ function Categories() {
                   }}
                 >
                   {' '}
-                  {category}{' '}
+                    <FormattedMessage id = {`components.categories.${category}`} defaultMessage = {category} />
+                  {' '}
                 </span>
               }
               {selectedCategory === category && (
