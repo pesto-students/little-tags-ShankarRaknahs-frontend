@@ -1,10 +1,9 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
-import Button from '@material-ui/core/Button';
 import COLORS from '../../config/colors.config';
-import Box from '@material-ui/core/Box';
-import { Zoom } from '@material-ui/core';
+
+import { Box, Paper, Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -15,8 +14,8 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     fontWeight: '700',
     borderRadius: 5,
-    fontSize: 'h6.fontSize',
-    fontFamily: 'Monospace',
+    fontSize: '5%',
+    fontFamily: 'Poppins',
     visibility: 'hidden',
     '&:hover': {
       visibility: 'visible',
@@ -33,6 +32,14 @@ const useStyles = makeStyles((theme) => ({
     visibility: 'visible',
     color: COLORS.SECONDARY,
   },
+  image: {
+    transition: 'transform 0.5s ease-in-out',
+    margin: 20,
+    '&:hover': {
+      cursor: 'pointer',
+      transform: 'scale3d(1.05, 1.05, 1)',
+    },
+  },
 }));
 
 const ImageCategorizer = ({ element }) => {
@@ -45,7 +52,10 @@ const ImageCategorizer = ({ element }) => {
 
   return (
     <div className={classes.image} style={imageStyle}>
-      <img src={imagePath} alt={title}></img>
+      <Paper variant='outlined' className={classes.image}>
+        <img src={imagePath} alt={title}></img>
+      </Paper>
+      {/* </Zoom> */}
       {positions.map((position) => {
         const id = position.id;
         const style = position.style;

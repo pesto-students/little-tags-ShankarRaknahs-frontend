@@ -11,6 +11,10 @@ import Profile from '../Profile/Profile';
 import APP from '../../config/app.config';
 import Notification from '../Notifications/Notification';
 import Title from '../Title/Title';
+import Fab from '@material-ui/core/Fab';
+
+import Cart from '../Cart/Cart';
+import Wishlist from '../Wishlist/Wishlist';
 
 export default function Navbar() {
   const classes = useStyles();
@@ -59,6 +63,7 @@ export default function Navbar() {
           <Title {...app} />
           <div className={classes.grow} />
           <Searchbar />
+          {/* <div className={classes.grow} /> */}
           <div className={classes.sectionDesktop}>
             <LanguageInt id={menuId} />
             <Notification id={menuId} />
@@ -72,11 +77,21 @@ export default function Navbar() {
               onClick={handleMobileMenuOpen}
               color='inherit'
             >
-              <More />
+              <More className={classes.more} />
             </IconButton>
           </div>
         </Toolbar>
       </AppBar>
+
+      <div className={classes.fabContainer}>
+        <Fab size='small' aria-label='add' className={classes.fab}>
+          <Cart />
+        </Fab>
+        <Fab size='small' aria-label='add' className={classes.fab}>
+          <Wishlist />
+        </Fab>
+      </div>
+
       {renderMobileMenu}
     </div>
   );

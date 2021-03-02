@@ -21,4 +21,21 @@ export const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  more: {
+    marginLeft: '30%',
+  },
+  fabContainer: {
+    borderRadius: '15%',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: '1%',
+    backgroundColor: COLORS.PRIMARY,
+    position: 'fixed',
+    bottom: theme.spacing(2),
+    right: theme.spacing(2),
+    marginBottom: '20%',
+  },
+  fab: {
+    marginTop: '40%',
+  },
 }));

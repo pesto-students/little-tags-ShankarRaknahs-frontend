@@ -22,14 +22,15 @@
     background-color: #004391;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 750px) {
     .category {
         font-size: 1em;
-        margin: 0rem 1rem;
+        margin: 0rem 1rem 1rem 1rem;
     }
     .categories {
-        margin: 0;
-         overflow-x: scroll;
-        max-width: fit-content;
+        margin: 0.2rem 1rem;  
+        overflow-x: scroll;
+        max-width: 100%;
+        background: transparent;
     }
 }

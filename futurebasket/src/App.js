@@ -7,7 +7,6 @@ import { getLocaleData } from "./i18n/getLocaleData";
 function App() {
   const locale = useSelector((state) => state.localeReducer);
   const localeData = getLocaleData(locale);
-  console.log({localeData, locale});
 
   return (
     <IntlProvider locale = {localeData.locale} messages = {localeData.message} defaultLocale="en" >
