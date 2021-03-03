@@ -1,19 +1,21 @@
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
 import ButtonPrimary from '../../components/Button/Button';
 import COLORS from '../../config/colors.config';
 import { useStyles } from './styles';
+import { FormattedMessage, useIntl } from 'react-intl';
 
 const PhoneAuth = ({ action }) => {
   const classes = useStyles();
 
   return (
     <>
-      <h3>Sign in using Mobile</h3>
+      <h3> 
+        <FormattedMessage id = "auth.signInMobile" defaultMessage = "Sign in using Mobile" />
+      </h3>
       <TextField
         fullWidth
         size='small'
-        label='Enter the Phone Number'
+        label= {useIntl().formatMessage({id: "auth.enterThePhoneNumber", defaultMessage: "Enter the Phone Number"})}
         variant='outlined'
         name='phone'
         className={classes.phone}

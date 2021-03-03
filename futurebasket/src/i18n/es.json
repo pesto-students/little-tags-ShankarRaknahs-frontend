@@ -1,9 +1,18 @@
 {
-    "components.categories.Men" : "Hombres",
-    "components.categories.Women" : "Mujeres",
-    "components.categories.Electronics" : "Electrónica",
-    "components.categories.Jewelry" : "Joyas",
-    "components.drawer.login" : "acceso",
-    "components.drawer.newUser" : "inscribirse"
-
+  "categories": {
+    "Men": "Hombres",
+    "Women": "Mujeres",
+    "Electronics": "Electrónica",
+    "Jewelry": "Joyas"
+  },
+  "auth": {
+    "login": "Inicia sesión",
+    "newUser": "Registro de nuevo usuario",
+    "signIn": "registrarse",
+    "signUp": "inscribirse",
+    "requestOtp": "solicitar otp",
+    "signInMobile": "Iniciar sesión con el móvil",
+    "enterThePhoneNumber": "Ingrese el número de teléfono",
+    "with": "con"
+  }
 }

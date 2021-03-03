@@ -7,6 +7,7 @@ import Facebook from '../Login/FacebookSignIn';
 import PhoneAuth from '../Login/PhoneAuth';
 
 import { useStyles } from './styles';
+import useFormatMessage from "../../i18n/useFormatMessage";
 
 const LoginForm = () => {
   const classes = useStyles();
@@ -27,19 +28,19 @@ const LoginForm = () => {
           textColor='secondary'
           centered
         >
-          <Tab label='LOGIN' {...a11yProps(0)} />
-          <Tab label='NEW USER' {...a11yProps(1)} />
+          <Tab label = { useFormatMessage("auth.login", "Login")} {...a11yProps(0)} />
+          <Tab label = { useFormatMessage("auth.newUser","Sign Up")} {...a11yProps(1)} />
         </Tabs>
       </Paper>
       <TabPanel value={value} index={0}>
-        <Google action={'sign in'} />
-        <Facebook action={'Sign in'} />
-        <PhoneAuth action={'Request OTP'} />
+        <Google action = { useFormatMessage("auth.signIn",  "Sign In")}  />
+        <Facebook action = { useFormatMessage("auth.signIn",  "Sign In")}  />
+        <PhoneAuth action = { useFormatMessage("auth.requestOtp",  "Request OTP")} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Google action={'sign up'} className={classes.btn} />
-        <Facebook action={'Sign up'} className={classes.btn} />
-        <PhoneAuth action={'Request OTP'} />
+        <Google action = { useFormatMessage("auth.signUp",  "Sign Up")}  className={classes.btn} />
+        <Facebook action = { useFormatMessage("auth.signUp",  "Sign Up")} className={classes.btn} />
+        <PhoneAuth action = { useFormatMessage("auth.requestOtp",  "Request OTP" )} />
       </TabPanel>
     </>
   );
