@@ -24,6 +24,9 @@ const SubCategory = ({ handleCategory }) => {
 
   useEffect(() => {
     handleCategory(categoryName);
+    return () => {
+      handleCategory("");
+    }
   }, [categoryName]);
 
   return (
