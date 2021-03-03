@@ -11,12 +11,12 @@ const PhoneAuth = ({ action }) => {
   return (
     <>
       <h3> 
-        <FormattedMessage id = "components.drawer.signInMobile" defaultMessage = "Sign in using Mobile" />
+        <FormattedMessage id = "auth.signInMobile" defaultMessage = "Sign in using Mobile" />
       </h3>
       <TextField
         fullWidth
         size='small'
-        label= {useIntl().formatMessage({id: "components.drawer.enterThePhoneNumber", defaultMessage: "Enter the Phone Number"})}
+        label= {useIntl().formatMessage({id: "auth.enterThePhoneNumber", defaultMessage: "Enter the Phone Number"})}
         variant='outlined'
         name='phone'
         className={classes.phone}

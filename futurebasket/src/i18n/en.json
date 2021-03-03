@@ -1,13 +1,18 @@
 {
-    "components.categories.Men" : "Men",
-    "components.categories.Women" : "Women",
-    "components.categories.Electronics" : "Electronics",
-    "components.categories.Jewelry" : "Jewelry",
-    "components.drawer.login" : "LOGIN",
-    "components.drawer.newUser" : "New User Registration",
-    "components.drawer.signIn" :"SIGN IN",
-    "components.drawer.signUp" : "SIGN UP",
-    "components.drawer.requestOtp": "Request OTP",
-    "components.drawer.signInMobile": "Sign in using Mobile",
-    "components.drawer.enterThePhoneNumber": "Enter the Phone Number"
+  "categories": {
+    "Men": "Men",
+    "Women": "Women",
+    "Electronics": "Electronics",
+    "Jewelry": "Jewelry"
+  },
+  "auth": {
+    "login": "LOGIN",
+    "newUser": "New User Registration",
+    "signIn": "SIGN IN",
+    "signUp": "SIGN UP",
+    "requestOtp": "Request OTP",
+    "signInMobile": "Sign in using Mobile",
+    "enterThePhoneNumber": "Enter the Phone Number",
+    "with": "with"
+  }
 }

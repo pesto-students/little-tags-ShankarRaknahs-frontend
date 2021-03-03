@@ -28,7 +28,7 @@ function Categories() {
                   }}
                 >
                   {' '}
-                    <FormattedMessage id = {`components.categories.${category}`} defaultMessage = {category} />
+                    <FormattedMessage id = {`categories.${category}`} defaultMessage = {category} />
                   {' '}
                 </span>
               }
@@ -52,7 +52,7 @@ function Categories() {
                   }}
                 >
                   {' '}
-                    <FormattedMessage id = {`components.categories.${category}`} defaultMessage = {category} />
+                    <FormattedMessage id = {`categories.${category}`} defaultMessage = {category} />
                   {' '}
                 </span>
               }
