@@ -3,6 +3,10 @@ import COLORS from '../../config/colors.config';
 
 export const useStyles = makeStyles((theme) => ({
   search: {
+    color: COLORS.ICON,
+    '&:placeholder': {
+      color: 'red',
+    },
     position: 'relative',
     borderRadius: 30,
     backgroundColor: fade(COLORS.ICON, 0.15),
@@ -28,10 +32,8 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
 
-  inputRoot: {
-    color: COLORS.ICON,
-  },
   inputInput: {
+    color: COLORS.ICON,
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
