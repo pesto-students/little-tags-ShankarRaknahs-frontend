@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route, useLocation } from 'react-router-dom';
 import SubCategory from '../SubCategory/index';
 import COLORS from '../../config/colors.config';
 import './Categories.css';
@@ -7,7 +7,9 @@ import { FormattedMessage } from "react-intl";
 
 function Categories() {
   const categories = ['Men', 'Women', 'Electronics', 'Jewelry'];
-  const [selectedCategory, setSelectedCategory] = useState('Men');
+  const location = useLocation();
+  let defaultCategory = location.path === '/' ? "Men" : "";
+  const [selectedCategory, setSelectedCategory] = useState(defaultCategory);
 
   const handleCategory = (selectedCategory) =>
     setSelectedCategory(selectedCategory);
@@ -28,7 +30,7 @@ function Categories() {
                   }}
                 >
                   {' '}
-                    <FormattedMessage id = {`components.categories.${category}`} defaultMessage = {category} />
+                    <FormattedMessage id = {`categories.${category}`} defaultMessage = {category} />
                   {' '}
                 </span>
               }
@@ -52,7 +54,7 @@ function Categories() {
                   }}
                 >
                   {' '}
-                    <FormattedMessage id = {`components.categories.${category}`} defaultMessage = {category} />
+                    <FormattedMessage id = {`categories.${category}`} defaultMessage = {category} />
                   {' '}
                 </span>
               }

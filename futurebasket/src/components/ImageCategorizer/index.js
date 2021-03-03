@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     fontWeight: '700',
     borderRadius: 5,
-    fontSize: '5%',
+    fontSize: '0.8em',
     fontFamily: 'Poppins',
     visibility: 'hidden',
     '&:hover': {
@@ -84,7 +84,7 @@ const ImageCategorizer = ({ element }) => {
               </Box>
             }
           >
-            {title}
+          <span> {title} </span>
           </Button>
         );
       })}
