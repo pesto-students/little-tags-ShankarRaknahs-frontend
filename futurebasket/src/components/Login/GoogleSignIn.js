@@ -3,7 +3,7 @@ import { GoogleLoginButton } from 'react-social-login-buttons';
 
 const GoogleSignIn = ({ action }) => {
   return (
-    <GoogleLoginButton style={{ marginBottom: '10%' }}>
+    <GoogleLoginButton style={{ marginBottom: '10%', width: '100%' }}>
       {action}
       &nbsp;
       {useFormatMessage('auth.with', 'with')}
