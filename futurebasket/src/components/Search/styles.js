@@ -1,46 +1,22 @@
-import { fade, makeStyles } from '@material-ui/core/styles';
-import COLORS from '../../config/colors.config';
+import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles((theme) => ({
-  search: {
-    color: COLORS.ICON,
-    '&:placeholder': {
-      color: 'red',
-    },
-    position: 'relative',
-    borderRadius: 30,
-    backgroundColor: fade(COLORS.ICON, 0.15),
-    '&:hover': {
-      backgroundColor: fade(COLORS.ICON, 0.25),
-    },
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(2),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
-  },
-
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
+  root: {
+    padding: '2px 4px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'center',
+    width: '45vw',
+    height: '5vh',
+    marginRight: theme.spacing(2),
+    marginLeft: theme.spacing(2),
+    borderRadius: 30,
+    fontFamily: 'Poppins',
   },
-
-  inputInput: {
-    color: COLORS.ICON,
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
+  input: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+  },
+  iconButton: {
+    padding: 10,
   },
 }));

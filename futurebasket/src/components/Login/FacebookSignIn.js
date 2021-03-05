@@ -1,17 +1,14 @@
-import ButtonPrimary from '../Button/Button';
-import COLORS from '../../config/colors.config';
 import useFormatMessage from '../../i18n/useFormatMessage';
+import { FacebookLoginButton } from 'react-social-login-buttons';
 
 const FacebookSignIn = ({ action }) => {
   return (
-    <ButtonPrimary btnClr={COLORS.FACEBOOK} textClr={COLORS.LIGHT}>
-      {action} 
+    <FacebookLoginButton style={{ marginBottom: '10%' }}>
+      {action}
       &nbsp;
-      {useFormatMessage("auth.with", "with")}
-      &nbsp;
+      {useFormatMessage('auth.with', 'with')}
       <span> Facebook </span>
-
-    </ButtonPrimary>
+    </FacebookLoginButton>
   );
 };
 

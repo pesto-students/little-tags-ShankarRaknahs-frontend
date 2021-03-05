@@ -5,7 +5,7 @@ const COLORS = {
   DARK: '#000000',
   LIGHT: '#ffffff',
   SILVERSAND: '#848484',
-  ICON: '#BCBCCB',
+  ICON: '#FFFFFF',
   GOOGLE: '#4285F4',
   FACEBOOK: '#3B5998',
   ACTION: '#FF533A',

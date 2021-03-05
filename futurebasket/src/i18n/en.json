@@ -8,8 +8,8 @@
   "auth": {
     "login": "LOGIN",
     "newUser": "New User Registration",
-    "signIn": "SIGN IN",
-    "signUp": "SIGN UP",
+    "signIn": "Login",
+    "signUp": "Continue",
     "requestOtp": "Request OTP",
     "signInMobile": "Sign in using Mobile",
     "enterThePhoneNumber": "Enter the Phone Number",
