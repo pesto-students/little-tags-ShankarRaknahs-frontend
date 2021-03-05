@@ -1,26 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IconButton, Select, FormControl } from '@material-ui/core';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 import { Language } from '@material-ui/icons/';
 
 import { useStyles } from './styles';
 import APP from '../../config/app.config';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setEnglish, setSpanish } from '../../actions/locale'
 
 const LanguageInt = ({ id }) => {
   const classes = useStyles();
 
-  const locale = useSelector((state) => state.localeReducer);
+  const [currentLocale, setLocale] = useLocalStorage('language', 'en');
+
   const dispatch = useDispatch();
 
-  const handleChange = (event) => {
-    const selectedLang = event.target.value;
-    localStorage.setItem("language", selectedLang);
-    if(selectedLang === 'es')
+  function updateLocaleInStore(locale) {
+    if(locale === 'es')
       dispatch(setEnglish());
     else 
       dispatch(setSpanish());
+  }
+
+  useEffect(() => {
+    updateLocaleInStore(currentLocale);
+  }, [])
+
+  const handleChange = (event) => {
+    const selectedLang = event.target.value;
+    setLocale(selectedLang);
+    updateLocaleInStore(selectedLang);
   };
 
   return (
@@ -36,7 +46,7 @@ const LanguageInt = ({ id }) => {
           </IconButton>
           <Select
             native
-            value={locale}
+            value={currentLocale}
             onChange={handleChange}
             label='Language'
             className={classes.icon}
