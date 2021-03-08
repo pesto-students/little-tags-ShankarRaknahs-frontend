@@ -6,6 +6,8 @@ import { Language } from '@material-ui/icons/';
 
 import { useStyles } from './styles';
 import APP from '../../config/app.config';
+
+import MenuItem from '@material-ui/core/MenuItem';
 import { useDispatch } from 'react-redux'
 import { setEnglish, setSpanish } from '../../actions/locale'
 
@@ -35,7 +37,11 @@ const LanguageInt = ({ id }) => {
 
   return (
     <div>
-      <FormControl variant='outlined' className={classes.formControl}>
+      <FormControl
+        variant='standard'
+        margin='none'
+        className={classes.formControl}
+      >
         <div>
           <IconButton aria-label='Language selector' color='inherit'>
             <Language
@@ -55,12 +61,12 @@ const LanguageInt = ({ id }) => {
               id: 'outlined-age-native-simple',
             }}
           >
-            <option value = "en">
+            <MenuItem value='en'>
               {id === APP.DESKTOP_ID ? 'English' : 'En'}
-            </option>
-            <option value = "es">
+            </MenuItem>
+            <MenuItem value='es'>
               {id === APP.DESKTOP_ID ? 'Spanish' : 'Es'}
-            </option>
+            </MenuItem>
           </Select>
         </div>
       </FormControl>

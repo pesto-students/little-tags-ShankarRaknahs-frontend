@@ -3,7 +3,7 @@ import { FacebookLoginButton } from 'react-social-login-buttons';
 
 const FacebookSignIn = ({ action }) => {
   return (
-    <FacebookLoginButton style={{ marginBottom: '10%' }}>
+    <FacebookLoginButton style={{ marginBottom: '10%', width: '100%' }}>
       {action}
       &nbsp;
       {useFormatMessage('auth.with', 'with')}
