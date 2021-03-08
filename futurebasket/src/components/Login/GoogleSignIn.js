@@ -1,16 +1,15 @@
-import ButtonPrimary from '../Button/Button';
-import COLORS from '../../config/colors.config';
-import useFormatMessage from "../../i18n/useFormatMessage";
+import useFormatMessage from '../../i18n/useFormatMessage';
+import { GoogleLoginButton } from 'react-social-login-buttons';
 
 const GoogleSignIn = ({ action }) => {
   return (
-    <ButtonPrimary btnClr={COLORS.GOOGLE} textClr={COLORS.LIGHT}>
-      {action}  
+    <GoogleLoginButton style={{ marginBottom: '10%', width: '100%' }}>
+      {action}
       &nbsp;
-      {useFormatMessage("auth.with", "with")}
+      {useFormatMessage('auth.with', 'with')}
       &nbsp;
-      <span> Google </span>
-    </ButtonPrimary>
+      <span>Google</span>
+    </GoogleLoginButton>
   );
 };
 

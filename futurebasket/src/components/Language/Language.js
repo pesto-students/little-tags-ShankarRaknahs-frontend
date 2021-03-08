@@ -1,31 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IconButton, Select, FormControl } from '@material-ui/core';
+import useLocalStorage from '../../hooks/useLocalStorage';
 
 import { Language } from '@material-ui/icons/';
 
 import { useStyles } from './styles';
 import APP from '../../config/app.config';
-import { useSelector, useDispatch } from 'react-redux'
+
+import MenuItem from '@material-ui/core/MenuItem';
+import { useDispatch } from 'react-redux'
 import { setEnglish, setSpanish } from '../../actions/locale'
 
 const LanguageInt = ({ id }) => {
   const classes = useStyles();
 
-  const locale = useSelector((state) => state.localeReducer);
+  const [currentLocale, setLocale] = useLocalStorage('language', 'en');
+
   const dispatch = useDispatch();
 
-  const handleChange = (event) => {
-    const selectedLang = event.target.value;
-    localStorage.setItem("language", selectedLang);
-    if(selectedLang === 'es')
+  function updateLocaleInStore(locale) {
+    if(locale === 'es')
       dispatch(setEnglish());
     else 
       dispatch(setSpanish());
+  }
+
+  useEffect(() => {
+    updateLocaleInStore(currentLocale);
+  }, [])
+
+  const handleChange = (event) => {
+    const selectedLang = event.target.value;
+    setLocale(selectedLang);
+    updateLocaleInStore(selectedLang);
   };
 
   return (
     <div>
-      <FormControl variant='outlined' className={classes.formControl}>
+      <FormControl
+        variant='standard'
+        margin='none'
+        className={classes.formControl}
+      >
         <div>
           <IconButton aria-label='Language selector' color='inherit'>
             <Language
@@ -36,7 +52,7 @@ const LanguageInt = ({ id }) => {
           </IconButton>
           <Select
             native
-            value={locale}
+            value={currentLocale}
             onChange={handleChange}
             label='Language'
             className={classes.icon}
@@ -45,12 +61,12 @@ const LanguageInt = ({ id }) => {
               id: 'outlined-age-native-simple',
             }}
           >
-            <option value = "en">
+            <MenuItem value='en'>
               {id === APP.DESKTOP_ID ? 'English' : 'En'}
-            </option>
-            <option value = "es">
+            </MenuItem>
+            <MenuItem value='es'>
               {id === APP.DESKTOP_ID ? 'Spanish' : 'Es'}
-            </option>
+            </MenuItem>
           </Select>
         </div>
       </FormControl>

@@ -9,8 +9,6 @@ export const useStyles = makeStyles((theme) => ({
     color: COLORS.PRIMARY,
   },
   formControl: {
-    margin: theme.spacing(0.5),
-    minWidth: 2,
-    // minHeight: 1,
+    color: COLORS.ICON,
   },
 }));

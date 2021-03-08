@@ -3,8 +3,8 @@ import Button from '@material-ui/core/Button';
 const ButtonPrimary = ({ btnClr, textClr, children }) => {
   return (
     <Button
-      variant='contained'
       fullWidth
+      variant='contained'
       style={{
         backgroundColor: btnClr,
         color: textClr,

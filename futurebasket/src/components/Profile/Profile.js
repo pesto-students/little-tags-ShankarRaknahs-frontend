@@ -1,14 +1,13 @@
 import React from 'react';
 
 import LoginForm from '../Login/Form';
-import { IconButton, SwipeableDrawer } from '@material-ui/core';
+import { IconButton, Drawer } from '@material-ui/core';
 import { PersonOutlineOutlined, Close } from '@material-ui/icons/';
 
 import APP from '../../config/app.config';
 import { useStyles } from './styles';
 
 const Profile = ({ id }) => {
-  
   const classes = useStyles();
   const [isProfile, setProfile] = React.useState(false);
 
@@ -39,15 +38,16 @@ const Profile = ({ id }) => {
         />
       </IconButton>
 
-      <SwipeableDrawer
+      <Drawer
         anchor={'right'}
         open={isProfile}
         onClose={toggleProfileWindow(false)}
         onOpen={toggleProfileWindow(true)}
+        variant='persistent'
       >
         <Close className={classes.close} onClick={toggleProfileWindow(false)} />
         <LoginForm className={classes.form} />
-      </SwipeableDrawer>
+      </Drawer>
     </>
   );
 };
