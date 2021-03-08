@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getLocaleData } from "./i18n/getLocaleData";
 import { flatten } from "flat";
 import Search from './pages/Search/Search';
-import product from './pages/Product/product';
+import Product from './pages/Product/Product';
 
 function App() {
   const locale = useSelector((state) => state.localeReducer);
@@ -18,7 +18,7 @@ function App() {
           <Search />
         </Route>
         <Route path='/product/:id'>
-          <product />
+          <Product />
         </Route>
         <Route path='/'>
           <Home />

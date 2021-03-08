@@ -2,7 +2,7 @@ import React from 'react'
 import Categories from '../../components/Categories/Categories'
 import Navbar from '../../components/Navbar/Navbar'
 
-function product() {
+function Product() {
     return (
         <div>
             <Navbar />
@@ -11,4 +11,4 @@ function product() {
     )
 }
 
-export default product
+export default Product

@@ -20,3 +20,31 @@ export const useStyles = makeStyles((theme) => ({
     padding: 10,
   },
 }));
+
+export const useStylesForSuggestions = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    maxWidth: '36ch',
+    backgroundColor: theme.palette.background.paper,
+    paddingBottom:'0',
+  },
+  suggestionItem: {
+    '&:hover': {
+      background: "#e1dcdc",
+   },
+   color: 'black',
+   display: 'flex',
+   alignItems: 'center'
+  },
+  position : {
+    position:'absolute',
+    left: '5%',
+    zIndex: '1',
+  },
+  suggestionText:{
+    padding: '0 1rem',
+  },
+  iconStyle: {
+    transform: "scale(0.8)" 
+  },
+}));
