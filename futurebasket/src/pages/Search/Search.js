@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react';
 import Categories from '../../components/Categories/Categories'
 import Navbar from '../../components/Navbar/Navbar'
 
@@ -7,7 +8,7 @@ function Search() {
         <div>
             <Navbar />
             <Categories />
-        </div>
+        </div> 
     )
 }
 

@@ -1,4 +1,4 @@
-import { fade, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import COLORS from '../../config/colors.config';
 
 export const useStyles = makeStyles((theme) => ({
@@ -10,5 +10,9 @@ export const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     color: COLORS.ICON,
+  },
+  container: {
+    display: 'flex',
+    alignItems: 'center'
   },
 }));

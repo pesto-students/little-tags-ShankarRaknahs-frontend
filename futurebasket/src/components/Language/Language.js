@@ -42,7 +42,7 @@ const LanguageInt = ({ id }) => {
         margin='none'
         className={classes.formControl}
       >
-        <div>
+        <div className = {classes.container}>
           <IconButton aria-label='Language selector' color='inherit'>
             <Language
               className={
@@ -51,7 +51,6 @@ const LanguageInt = ({ id }) => {
             />
           </IconButton>
           <Select
-            native
             value={currentLocale}
             onChange={handleChange}
             label='Language'

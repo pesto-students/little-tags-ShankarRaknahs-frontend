@@ -45,9 +45,10 @@ function Suggestions({
       {suggestHistory.map((suggestion) => (
         <Link
           to={`/search?q=${suggestion}`}
-          style={{ "text-decoration": "none" }}
+          // style={{ "text-decoration": "none" }}
           className="suggestion-link"
           onClick={handleSuggestionClick}
+          key = {`${suggestion}-history`}
         >
           <ListItem
             alignItems="flex-start"
@@ -64,9 +65,10 @@ function Suggestions({
       {suggestions.map((suggestion) => (
         <Link
           to={`/search?q=${suggestion}`}
-          style={{ "text-decoration": "none" }}
+          // style={{ "text-decoration": "none" }}
           className="suggestion-link"
           onClick={handleSuggestionClick}
+          key = {`${suggestion}-suggestion`}
         >
           <ListItem
             alignItems="flex-start"
@@ -80,7 +82,7 @@ function Suggestions({
           </ListItem>
         </Link>
       ))}
-      <Divider variant="inset" component="li" />
+      <Divider variant="inset" component= {'span'} />
     </List>
   );
 }
