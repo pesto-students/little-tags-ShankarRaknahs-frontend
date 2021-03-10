@@ -8,7 +8,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
 import { Avatar, CardHeader } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
-
+import Image from '../../assets/categorizer/women/women-in-causuals.jpg'
 import { useStyles } from './styles';
 
 const Product = ({ item }) => {
@@ -55,7 +55,7 @@ const Product = ({ item }) => {
               <CardMedia
                 component='img'
                 className={classes.cover}
-                image={item.image}
+                image={Image}
                 title={classes.title}
               />
             </div>

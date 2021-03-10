@@ -6,10 +6,12 @@ export const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     margin: '2%',
+    maxWidth: '290px',
   },
   productsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
+    marginTop: '1rem',
   },
   header: {
     // backgroundColor: '#ffffff',
@@ -36,8 +38,8 @@ export const useStyles = makeStyles({
     padding: '2%',
   },
   cover: {
-    width: 150,
-    height: 150,
+    // width: 150,
+    // height: 150,
   },
   cart: {
     backgroundColor: COLORS.ACTION,

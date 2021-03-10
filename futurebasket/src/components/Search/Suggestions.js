@@ -45,7 +45,7 @@ function Suggestions({
       {suggestHistory.map((suggestion) => (
         <Link
           to={`/search?q=${suggestion}`}
-          // style={{ "text-decoration": "none" }}
+          style={{ "text-decoration": "none" }}
           className="suggestion-link"
           onClick={handleSuggestionClick}
           key = {`${suggestion}-history`}
@@ -65,7 +65,7 @@ function Suggestions({
       {suggestions.map((suggestion) => (
         <Link
           to={`/search?q=${suggestion}`}
-          // style={{ "text-decoration": "none" }}
+          style={{ "text-decoration": "none" }}
           className="suggestion-link"
           onClick={handleSuggestionClick}
           key = {`${suggestion}-suggestion`}
