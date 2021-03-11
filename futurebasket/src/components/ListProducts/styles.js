@@ -6,7 +6,6 @@ export const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     margin: '2%',
-    maxWidth: '290px',
   },
   productsContainer: {
     display: 'flex',
@@ -38,8 +37,8 @@ export const useStyles = makeStyles({
     padding: '2%',
   },
   cover: {
-    // width: 150,
-    // height: 150,
+    width: 300,
+    height: 300,
   },
   cart: {
     backgroundColor: COLORS.ACTION,
@@ -47,5 +46,31 @@ export const useStyles = makeStyles({
   price: {
     color: '#000000',
     fontWeight: 'bold',
+  },
+  actionArea:{
+    
+  },
+  lightText:{
+    fontWeight:"lighter"
+  },
+  priceDetails:{
+    display: "flex",
+    justifyContent:"start",
+    alignItems:"center"
+  },
+  sizeContainer:{
+    display: "flex",
+    justifyContent:"start",
+    alignItems:"center"
+  },
+  sizes:{
+    marginLeft: "0.5rem"
+  },
+  originalPrice:{
+    marginLeft: "0.5rem"
+  },
+  discount:{
+    marginLeft: "0.5rem",
+    color: 'green'
   },
 });
