@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -23,16 +23,19 @@ const Product = ({ item }) => {
               <div className={classes.colors}>
                 {item.variantsColor.map((variant) => {
                   return (
-                    <Link to = {`/product/${variant.variantId}`}>
-                    <IconButton>
-                      <Skeleton
-                        variant='circle'
-                        animation={false}
-                        width={12}
-                        height={12}
-                        style={{ backgroundColor: variant.color, marginRight: 10 }}
-                      />
-                    </IconButton>
+                    <Link to={`/product/${variant.variantId}`}>
+                      <IconButton>
+                        <Skeleton
+                          variant='circle'
+                          animation={false}
+                          width={12}
+                          height={12}
+                          style={{
+                            backgroundColor: variant.color,
+                            marginRight: 10,
+                          }}
+                        />
+                      </IconButton>
                     </Link>
                   );
                 })}
@@ -50,40 +53,56 @@ const Product = ({ item }) => {
           }
         />
         <div className={classes.details}>
-        <Link to = {`/product/${item.id}`} style = {{ "text-decoration": "none"}} >
-          <CardActionArea className = {classes.actionArea}>
-            <div className={classes.coverContainer}>
-              <CardMedia
-                component='img'
-                className={classes.cover}
-                image={item.image}
-                title={classes.title}
-              />
-            </div>
+          <Link to={`/product/${item.id}`} style={{ textDecoration: 'none' }}>
+            <CardActionArea className={classes.actionArea}>
+              <div className={classes.coverContainer}>
+                <CardMedia
+                  component='img'
+                  className={classes.cover}
+                  image={item.image}
+                  title={classes.title}
+                />
+              </div>
 
-            <CardContent className={classes.content}>
-              <Typography className = {classes.lightText} variant = "span">{item.company}</Typography>
-              <Typography noWrap variant='h5'>
-                {item.title}
-              </Typography>
-              <div className = {classes.priceDetails}>
-                <Typography variant='subtitle1' className={classes.price}>
-                  Rs. {item.price}
+              <CardContent className={classes.content}>
+                <Typography className={classes.lightText} variant='span'>
+                  {item.company}
                 </Typography>
-                <Typography variant='subtitle1' style = {{ "text-decoration": "line-through"}} className = {classes.originalPrice}>Rs. {item.originalPrice}</Typography>
-                <Typography className = {classes.lightText, classes.discount} >{item.discount} off</Typography>
-              </div>
-              <div className = { classes.sizeContainer }>
-              <Typography className = {classes.lightText} >Size</Typography>
-                {item.sizes.map((size, index) => (
-                  <>
-                    <Typography className = {classes.lightText, classes.sizes} >{size}</Typography>
-                    { index !== (item.sizes.length - 1) && <Typography className = {classes.lightText } >,</Typography> }
-                  </>
-                ))}
-              </div>
-            </CardContent>
-          </CardActionArea>
+                <Typography noWrap variant='h5'>
+                  {item.title}
+                </Typography>
+                <div className={classes.priceDetails}>
+                  <Typography variant='subtitle1' className={classes.price}>
+                    Rs. {item.price}
+                  </Typography>
+                  <Typography
+                    variant='subtitle1'
+                    style={{ textDecoration: 'line-through' }}
+                    className={classes.originalPrice}
+                  >
+                    Rs. {item.originalPrice}
+                  </Typography>
+                  <Typography className={(classes.lightText, classes.discount)}>
+                    {item.discount} off
+                  </Typography>
+                </div>
+                <div className={classes.sizeContainer}>
+                  <Typography className={classes.lightText}>Size</Typography>
+                  {item.sizes.map((size, index) => (
+                    <>
+                      <Typography
+                        className={(classes.lightText, classes.sizes)}
+                      >
+                        {size}
+                      </Typography>
+                      {index !== item.sizes.length - 1 && (
+                        <Typography className={classes.lightText}>,</Typography>
+                      )}
+                    </>
+                  ))}
+                </div>
+              </CardContent>
+            </CardActionArea>
           </Link>
         </div>
       </Card>
