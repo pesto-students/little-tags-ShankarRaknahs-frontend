@@ -3,12 +3,12 @@ import React from 'react';
 import { useStyles } from './styles';
 import Product from './Product';
 
-const Item = ({ item }) => {
+const Item = ({ product }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <Product />
+      <Product item={product} />
     </div>
   );
 };
