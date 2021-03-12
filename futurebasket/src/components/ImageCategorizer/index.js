@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: '700',
     borderRadius: 5,
     fontSize: '0.8em',
-    fontFamily: 'Poppins',
     visibility: 'hidden',
     '&:hover': {
       visibility: 'visible',
@@ -84,7 +83,7 @@ const ImageCategorizer = ({ element }) => {
               </Box>
             }
           >
-          <span> {title} </span>
+            <span> {title} </span>
           </Button>
         );
       })}
