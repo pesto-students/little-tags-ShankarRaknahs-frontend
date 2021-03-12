@@ -120,6 +120,7 @@ const Product = ({ item }) => {
       </div>
       <div className={classes.detailsContainer}>
         <Typography variant='h6'> Product Details: </Typography>
+        <Typography variant='subtitle2'>{item.details}</Typography>
       </div>
     </Card>
   );
