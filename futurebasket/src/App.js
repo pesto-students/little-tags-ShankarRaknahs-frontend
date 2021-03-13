@@ -7,6 +7,7 @@ import { flatten } from 'flat';
 import { Search } from './pages/Search/Search';
 import Product from './pages/Product/Product';
 import Checkout from './pages/Checkout/Checkout';
+import CartView from './pages/Cart/CartView';
 
 function App() {
   const locale = useSelector((state) => state.localeReducer);
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/checkout'>
             <Checkout />
+          </Route>
+          <Route path='/checkout'>
+            <CartView />
           </Route>
           <Route path='/'>
             <Home />

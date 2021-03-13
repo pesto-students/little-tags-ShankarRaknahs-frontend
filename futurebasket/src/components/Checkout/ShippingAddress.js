@@ -19,14 +19,13 @@ const SavedAddress = ({ address }) => {
     <div className={classes.addressContainer}>
       <Card variant='outlined'>
         <CardContent>
-          <Typography variant='h6'>{address.tag}</Typography>
-          <Typography variant='subtitle1'>
-            {address.name}, {address.address}
+          <Typography variant='subtitle1'>{address.tag}</Typography>
+          <Typography variant='subtitle2'>
+            {address.name}, {address.address}, {address.city}-{address.pincode}
           </Typography>
-          <Typography variant='subtitle1'>
-            {address.city}-{address.pincode}
+          <Typography variant='subtitle2'>
+            Mobile-{address.mobileNumber}
           </Typography>
-          <Typography>Mobile-{address.mobileNumber}</Typography>
         </CardContent>
       </Card>
     </div>
@@ -44,15 +43,6 @@ const ShippingAddress = () => {
 
   return (
     <div className={classes.stepContainer}>
-      <Button
-        variant='outlined'
-        color='secondary'
-        className={classes.stepButton}
-        startIcon={<AddIcon />}
-      >
-        Add New Address
-      </Button>
-
       <FormControl component='fieldset'>
         <RadioGroup
           aria-label='address'
@@ -71,6 +61,14 @@ const ShippingAddress = () => {
           })}
         </RadioGroup>
       </FormControl>
+      <Button
+        variant='text'
+        color='primary'
+        className={classes.actionBtn}
+        startIcon={<AddIcon />}
+      >
+        Add new address
+      </Button>
     </div>
   );
 };

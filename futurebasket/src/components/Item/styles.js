@@ -13,8 +13,8 @@ export const useStyles = makeStyles({
     margin: '2%',
   },
   cover: {
-    width: 400,
-    height: 400,
+    width: 300,
+    height: 450,
   },
   childCover: {
     width: 100,
@@ -29,10 +29,8 @@ export const useStyles = makeStyles({
   },
   priceDetails: {
     display: 'flex',
-    justifyContent: 'start',
+    // justifyContent: 'start',
     alignItems: 'center',
-    marginTop: '3vh',
-    marginBottom: '3vh',
   },
   discount: {
     marginLeft: '0.5rem',
@@ -46,12 +44,12 @@ export const useStyles = makeStyles({
     marginLeft: '0.5vw',
   },
   sizeContainer: {
-    marginTop: '5vh',
+    marginTop: '2vh',
     display: 'flex',
   },
   sizeButton: {
     backgroundColor: COLORS.ICON,
-    marginRight: '2vw',
+    marginRight: '0.5vw',
   },
   actionButton: {
     color: COLORS.LIGHT,
@@ -70,5 +68,13 @@ export const useStyles = makeStyles({
   quantityContainer: {
     marginTop: '5vh',
     display: 'flex',
+  },
+  brand: {
+    color: '#9B9796',
+  },
+  avatar: {
+    backgroundColor: '#f0f0f7',
+    marginInline: '0.5vw',
+    color: '#000000',
   },
 });

@@ -31,7 +31,7 @@ const Product = ({ item }) => {
           })}
         </div>
         <div>
-          <CardHeader
+          {/* <CardHeader
             className={classes.header}
             title={
               item.variantsColor ? (
@@ -66,7 +66,7 @@ const Product = ({ item }) => {
                 </IconButton>
               </Avatar>
             }
-          />
+          /> */}
 
           <CardMedia
             component='img'
@@ -75,9 +75,12 @@ const Product = ({ item }) => {
           />
         </div>
         <CardContent className={classes.content}>
-          <Typography variant='h5'>{item.title}</Typography>
+          <Typography variant='h6'>{item.title}</Typography>
+          <Typography variant='body1' className={classes.brand}>
+            {item.company}
+          </Typography>
           <div className={classes.priceDetails}>
-            <Typography variant='h4' className={classes.price}>
+            <Typography variant='h6' className={classes.price}>
               &#8377;{item.price}
             </Typography>
             <Typography
@@ -97,9 +100,9 @@ const Product = ({ item }) => {
             <ButtonGroup aria-label='size group' color='secondary'>
               {item.sizes.map((size, index) => (
                 <>
-                  <Button variant='outlined' className={classes.sizeButton}>
-                    {size}
-                  </Button>
+                  <Avatar className={classes.avatar}>
+                    <Typography variant='subtitle2'>{size}</Typography>
+                  </Avatar>
                 </>
               ))}
             </ButtonGroup>
