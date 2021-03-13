@@ -6,13 +6,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
-import { Avatar, CardHeader } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import TextField from '@material-ui/core/TextField';
-import Slider from '@material-ui/core/Slider';
 
 function valuetext(value) {
   return `${value}`;
@@ -41,43 +38,6 @@ const Product = ({ item }) => {
           })}
         </div>
         <div>
-          {/* <CardHeader
-            className={classes.header}
-            title={
-              item.variantsColor ? (
-                <div className={classes.colors}>
-                  {item.variantsColor.map((variant) => {
-                    return (
-                      <Link to={`/product/${variant.variantId}`}>
-                        <IconButton>
-                          <Skeleton
-                            variant='circle'
-                            animation={false}
-                            width={20}
-                            height={20}
-                            style={{
-                              backgroundColor: variant.color,
-                              marginRight: 10,
-                            }}
-                          />
-                        </IconButton>
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div></div>
-              )
-            }
-            action={
-              <Avatar className={classes.avatar}>
-                <IconButton aria-label='settings'>
-                  <FavoriteBorderIcon />
-                </IconButton>
-              </Avatar>
-            }
-          /> */}
-
           <CardMedia
             component='img'
             className={classes.cover}

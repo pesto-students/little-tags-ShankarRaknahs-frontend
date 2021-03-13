@@ -6,9 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
-import { Avatar, CardHeader } from '@material-ui/core';
-import { FormattedMessage } from 'react-intl';
-import Skeleton from '@material-ui/lab/Skeleton';
+import { Avatar } from '@material-ui/core';
 import { useStyles } from './styles';
 
 const Product = ({ item }) => {
