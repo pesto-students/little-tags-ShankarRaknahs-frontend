@@ -98,7 +98,7 @@ const Product = ({ item }) => {
               style={{ textDecoration: 'line-through' }}
               className={classes.originalPrice}
             >
-              &#8377;{item.originalPrice}
+              {item.originalPrice}
             </Typography>
             <Typography className={(classes.lightText, classes.discount)}>
               ({item.discount} off)

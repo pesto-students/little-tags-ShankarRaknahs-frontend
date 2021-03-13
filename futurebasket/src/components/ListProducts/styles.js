@@ -7,16 +7,19 @@ export const useStyles = makeStyles({
     justifyContent: 'center',
     margin: '2%',
   },
+  card: {
+    position: 'relative',
+  },
   productsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
     marginTop: '1rem',
   },
-  header: {
-    // backgroundColor: '#ffffff',
-  },
   avatar: {
+    position: 'absolute',
     backgroundColor: '#f0f0f7',
+    bottom: 10,
+    right: 10,
   },
   colors: {
     display: 'flex',
@@ -37,7 +40,7 @@ export const useStyles = makeStyles({
     padding: '2%',
   },
   cover: {
-    width: 300,
+    width: 250,
     height: 300,
   },
   cart: {
@@ -47,52 +50,50 @@ export const useStyles = makeStyles({
     color: '#000000',
     fontWeight: 'bold',
   },
-  actionArea:{
-    
+  actionArea: {},
+  lightText: {
+    fontWeight: 'lighter',
   },
-  lightText:{
-    fontWeight:"lighter"
+  priceDetails: {
+    display: 'flex',
+    justifyContent: 'start',
+    alignItems: 'center',
   },
-  priceDetails:{
-    display: "flex",
-    justifyContent:"start",
-    alignItems:"center"
+  sizeContainer: {
+    display: 'flex',
+    justifyContent: 'start',
+    alignItems: 'center',
   },
-  sizeContainer:{
-    display: "flex",
-    justifyContent:"start",
-    alignItems:"center"
+  sizes: {
+    marginLeft: '0.5rem',
   },
-  sizes:{
-    marginLeft: "0.5rem"
+  originalPrice: {
+    marginLeft: '0.5rem',
   },
-  originalPrice:{
-    marginLeft: "0.5rem"
+  discount: {
+    marginLeft: '0.5rem',
+    color: 'green',
   },
-  discount:{
-    marginLeft: "0.5rem",
-    color: 'green'
-  }
 });
 
 export const useFilterStyles = makeStyles((theme) => ({
-  container:{
-    width: "15%",
-    position: "sticky",
-    height: "100%,"
+  container: {
+    width: '15%',
+    position: 'sticky',
+    height: '100%,',
   },
-  subContainer:{
-    marginLeft: "1rem",
+  subContainer: {
+    marginLeft: '1rem',
   },
   filter: {
-    marginTop: "1rem",
+    marginTop: '1rem',
   },
   minMax: {
-    width:"8ch",
+    width: '8ch',
   },
   range: {
-    display: "flex",
-    textDecoration: "none", 
+    display: 'flex',
+    textDecoration: 'none',
   },
   root: {
     padding: '2px 4px',
@@ -100,27 +101,26 @@ export const useFilterStyles = makeStyles((theme) => ({
     alignItems: 'center',
     width: '100%',
     height: '5vh',
-    fontFamily: 'Poppins',
   },
   input: {
     marginLeft: theme.spacing(1),
     flex: 1,
-    paddding: "0.5rem",
+    paddding: '0.5rem',
   },
   iconButton: {
     padding: 1,
   },
-  searchResults:{
-    maxHeight: "20vh",
-    overflowY: "auto",
-    overflowX: "hidden",
-    flexWrap: "nowrap",
-    marginTop: "1rem"
+  searchResults: {
+    maxHeight: '20vh',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    flexWrap: 'nowrap',
+    marginTop: '1rem',
   },
   slider: {
-    marginTop: "1rem"
+    marginTop: '1rem',
   },
   searchFilters: {
-    marginTop: "1rem"
-  }
-}))
+    marginTop: '1rem',
+  },
+}));
