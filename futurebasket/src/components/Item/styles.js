@@ -49,9 +49,6 @@ export const useStyles = makeStyles({
     marginTop: '5vh',
     display: 'flex',
   },
-  sizeButtons: {
-    marginLeft: '1vw',
-  },
   sizeButton: {
     backgroundColor: COLORS.ICON,
     marginRight: '2vw',
@@ -69,5 +66,9 @@ export const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'column',
     padding: '1vh',
+  },
+  quantityContainer: {
+    marginTop: '5vh',
+    display: 'flex',
   },
 });

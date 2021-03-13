@@ -11,6 +11,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import TextField from '@material-ui/core/TextField';
 
 const Product = ({ item }) => {
   const classes = useStyles();
@@ -92,11 +93,8 @@ const Product = ({ item }) => {
           </div>
 
           <div className={classes.sizeContainer}>
-            <Typography variant='h6'>Select Size: </Typography>
-            <ButtonGroup
-              aria-label='size group'
-              className={classes.sizeButtons}
-            >
+            {/* <Typography variant='h6'>Select Size: </Typography> */}
+            <ButtonGroup aria-label='size group' color='secondary'>
               {item.sizes.map((size, index) => (
                 <>
                   <Button variant='outlined' className={classes.sizeButton}>
@@ -106,9 +104,22 @@ const Product = ({ item }) => {
               ))}
             </ButtonGroup>
           </div>
+          <div className={classes.quantityContainer}>
+            <TextField
+              id='outlined-number'
+              label='Quantity'
+              type='number'
+              defaultValue='1'
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant='outlined'
+            />
+          </div>
           <div>
             <Button
               variant='contained'
+              size='large'
               startIcon={<AddShoppingCartIcon />}
               className={classes.actionButton}
             >
