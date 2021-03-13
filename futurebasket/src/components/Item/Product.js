@@ -12,7 +12,17 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import TextField from '@material-ui/core/TextField';
+import Slider from '@material-ui/core/Slider';
 
+function valuetext(value) {
+  return `${value}`;
+}
+
+const marks = [
+  { value: 1, label: 1 },
+  { value: 5, label: 5 },
+  { value: 10, label: 10 },
+];
 const Product = ({ item }) => {
   const classes = useStyles();
 
@@ -95,33 +105,53 @@ const Product = ({ item }) => {
             </Typography>
           </div>
 
+          <div>
+            {item.variantsColor ? (
+              <div className={classes.colors}>
+                <Typography variant='subtitle1' className={classes.selectSize}>
+                  Colors
+                </Typography>
+                {item.variantsColor.map((variant) => {
+                  return (
+                    <Link to={`/product/${variant.variantId}`}>
+                      <IconButton>
+                        <Skeleton
+                          variant='square'
+                          animation={false}
+                          width={20}
+                          height={20}
+                          style={{
+                            backgroundColor: variant.color,
+                            marginRight: 10,
+                          }}
+                        />
+                      </IconButton>
+                    </Link>
+                  );
+                })}
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
+
           <div className={classes.sizeContainer}>
-            {/* <Typography variant='h6'>Select Size: </Typography> */}
-            <ButtonGroup aria-label='size group' color='secondary'>
-              {item.sizes.map((size, index) => (
-                <>
-                  <Avatar className={classes.avatar}>
-                    <Typography variant='subtitle2'>{size}</Typography>
-                  </Avatar>
-                </>
-              ))}
-            </ButtonGroup>
+            <Typography variant='subtitle1' className={classes.selectSize}>
+              Select size
+            </Typography>
+            {item.sizes.map((size, index) => (
+              <>
+                <Avatar className={classes.avatar}>
+                  <Typography variant='subtitle2'>{size}</Typography>
+                </Avatar>
+              </>
+            ))}
           </div>
-          <div className={classes.quantityContainer}>
-            <TextField
-              id='outlined-number'
-              label='Quantity'
-              type='number'
-              defaultValue='1'
-              InputLabelProps={{
-                shrink: true,
-              }}
-              variant='outlined'
-            />
-          </div>
+
           <div>
             <Button
               variant='contained'
+              color='secondary'
               size='large'
               startIcon={<AddShoppingCartIcon />}
               className={classes.actionButton}
@@ -129,11 +159,23 @@ const Product = ({ item }) => {
               {' '}
               Add to cart
             </Button>
+            <Button
+              variant='outlined'
+              size='large'
+              startIcon={<FavoriteBorderIcon />}
+              className={classes.wishlistButton}
+            >
+              {' '}
+              Wishlist
+            </Button>
           </div>
         </CardContent>
       </div>
       <div className={classes.detailsContainer}>
-        <Typography variant='h6'> Product Details: </Typography>
+        <Typography variant='h6' className={classes.header}>
+          {' '}
+          Product details{' '}
+        </Typography>
         <Typography variant='subtitle2'>{item.details}</Typography>
       </div>
     </Card>

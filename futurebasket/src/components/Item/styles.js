@@ -53,8 +53,14 @@ export const useStyles = makeStyles({
   },
   actionButton: {
     color: COLORS.LIGHT,
-    backgroundColor: COLORS.ACTION,
+    fontWeight: 'bold',
+    // backgroundColor: COLORS.ACTION,
     marginTop: '5vh',
+  },
+  wishlistButton: {
+    marginTop: '5vh',
+    marginLeft: '2vw',
+    fontWeight: 'bold',
   },
   detailsContainer: {
     margin: '2%',
@@ -76,5 +82,11 @@ export const useStyles = makeStyles({
     backgroundColor: '#f0f0f7',
     marginInline: '0.5vw',
     color: '#000000',
+  },
+  selectSize: {
+    marginTop: '1vh',
+  },
+  header: {
+    fontWeight: 'bold',
   },
 });
