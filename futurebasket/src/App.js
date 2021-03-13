@@ -21,7 +21,7 @@ function App() {
           <Route path='/search'>
             <Search />
           </Route>
-          <Route path='/product/:name/:id'>
+          <Route path='/product/:id'>
             <Product />
           </Route>
           <Route path='/'>

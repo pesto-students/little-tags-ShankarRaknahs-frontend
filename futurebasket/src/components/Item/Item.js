@@ -1,18 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-function Item() {
-    return (
-        <div className = "container">
-            <div>
-                <div className = "ImageList">
+import { useStyles } from './styles';
+import Product from './Product';
 
-                </div>
-                <div className = "ImageShowcase">
+const Item = ({ product }) => {
+  const classes = useStyles();
 
-                </div>
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className={classes.root}>
+      <Product item={product} />
+    </div>
+  );
+};
 
-export default Item
+export default Item;
