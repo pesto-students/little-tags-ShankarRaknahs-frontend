@@ -28,7 +28,7 @@ export const useStyles = makeStyles({
     alignItems: 'center',
   },
   content: {
-    width: 200,
+    width: 250,
   },
   coverContainer: {
     display: 'flex',
@@ -72,5 +72,55 @@ export const useStyles = makeStyles({
   discount:{
     marginLeft: "0.5rem",
     color: 'green'
-  },
+  }
 });
+
+export const useFilterStyles = makeStyles((theme) => ({
+  container:{
+    width: "15%",
+    position: "sticky",
+    height: "100%,"
+  },
+  subContainer:{
+    marginLeft: "1rem",
+  },
+  filter: {
+    marginTop: "1rem",
+  },
+  minMax: {
+    width:"8ch",
+  },
+  range: {
+    display: "flex",
+    textDecoration: "none", 
+  },
+  root: {
+    padding: '2px 4px',
+    display: 'flex',
+    alignItems: 'center',
+    width: '100%',
+    height: '5vh',
+    fontFamily: 'Poppins',
+  },
+  input: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+    paddding: "0.5rem",
+  },
+  iconButton: {
+    padding: 1,
+  },
+  searchResults:{
+    maxHeight: "20vh",
+    overflowY: "auto",
+    overflowX: "hidden",
+    flexWrap: "nowrap",
+    marginTop: "1rem"
+  },
+  slider: {
+    marginTop: "1rem"
+  },
+  searchFilters: {
+    marginTop: "1rem"
+  }
+}))

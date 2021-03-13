@@ -1,7 +1,6 @@
 import productList from "../../assets/products.json";
 
 function queryFilter(searchText) {
-    console.log(productList);
     let result =  productList.reduce((acc, product) => {
        let matchingStrings =  isStringMatching(product.title, searchText);
         if(matchingStrings) acc.add(product);

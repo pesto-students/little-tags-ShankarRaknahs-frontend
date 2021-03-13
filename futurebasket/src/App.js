@@ -4,7 +4,7 @@ import { IntlProvider } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { getLocaleData } from './i18n/getLocaleData';
 import { flatten } from 'flat';
-import Search from './pages/Search/Search';
+import { Search } from './pages/Search/Search';
 import Product from './pages/Product/Product';
 import Checkout from './pages/Checkout/Checkout';
 
@@ -19,9 +19,10 @@ function App() {
     >
       <Router>
         <Switch>
-          <Route path='/search'>
-            <Search />
-          </Route>
+          <Route
+            path='/search'
+            render={(props) => <Search key={props.location.key} />}
+          />
           <Route path='/product/:id'>
             <Product />
           </Route>

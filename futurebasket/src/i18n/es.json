@@ -14,5 +14,15 @@
     "signInMobile": "Iniciar sesión con el móvil",
     "enterThePhoneNumber": "Ingrese el número de teléfono",
     "with": "con"
+  },
+  "items": {
+    "currency": "€",
+    "filters": "filtros",
+    "priceRange": "Rango de precios",
+    "off": "rebajado"
+  },
+  "lang": {
+    "english": " Inglés",
+    "spanish": "Español"
   }
 }
