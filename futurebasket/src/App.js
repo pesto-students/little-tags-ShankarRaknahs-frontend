@@ -18,10 +18,10 @@ function App() {
     >
       <Router>
         <Switch>
-          <Route path='/search'>
-            <Search />
-          </Route>
-          <Route path='/product/:name/:id'>
+          <Route path='/search'  render = {(props) => ( 
+              <Search key = {props.location.key} /> 
+            )} />
+          <Route path='/product/:id'>
             <Product />
           </Route>
           <Route path='/'>

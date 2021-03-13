@@ -1,131 +1,97 @@
-import womenInSuits from '../../assets/categorizer/women/women-in-jeans.jpg';
-import womenInFormals from '../../assets/categorizer/women/women-in-random.jpg';
-import womenInSalwars from '../../assets/categorizer/women/women-in-causuals.jpg';
+import womenInJeans from '../../assets/categorizer/women/women-in-jean.jpg';
+import womenInSuits from '../../assets/categorizer/women/women-in-suit.jpg';
+import womenInTshirts from '../../assets/categorizer/women/women-in-tshirt.jpg';
+
+const womenInJean = {
+  id: 1,
+  title: 'Women-In-Jeans',
+  image: {
+    path: womenInJeans,
+  },
+  positions: [
+    {
+      id: 1,
+      title: 'causual-dress',
+      style: {
+        position: 'absolute',
+        top: '13%',
+        left: '30%',
+      },
+    },
+    {
+      id: 2,
+      title: 'Jean-Pants',
+      style: {
+        position: 'absolute',
+        top: '35%',
+        left: '25%',
+      },
+    },
+    {
+      id: 3,
+      title: 'Shoes',
+      style: {
+        position: 'absolute',
+        top: '55%',
+        left: '5%',
+      },
+    },
+  ],
+};
 
 const womenInSuit = {
-  id: 1,
-  title: 'Women-In-Suit',
+  id: 2,
+  title: 'Women-In-Jeans',
   image: {
     path: womenInSuits,
-    style: {
-      position: 'relative',
-      margin: 5,
-    },
   },
   positions: [
     {
       id: 1,
-      title: 'Suit',
+      title: 'suits',
       style: {
         position: 'absolute',
-        top: '20%',
-        right: '20%',
+        top: '13%',
+        left: '30%',
       },
     },
     {
       id: 2,
-      title: 'Suit-Pant',
+      title: 'Suit-Pants',
       style: {
         position: 'absolute',
-        top: '60%',
-        right: '12%',
+        top: '35%',
+        left: '25%',
       },
-    },
-    {
-      id: 3,
-      title: 'Formal-Shoes',
-      style: {
-        position: 'absolute',
-        top: '85%',
-        right: '10%',
-      },
-
-      // width: '35%',
     },
   ],
 };
-
-const womenInFormal = {
-  id: 2,
-  title: 'Women-In-Formals',
-  image: {
-    path: womenInFormals,
-    style: {
-      position: 'relative',
-      margin: 5,
-    },
-  },
-  positions: [
-    {
-      id: 1,
-      title: 'Formal-Shirt',
-      style: {
-        position: 'absolute',
-        top: '20%',
-        right: '10%',
-      },
-    },
-    {
-      id: 2,
-      title: 'Causual-Pant',
-      style: {
-        position: 'absolute',
-        top: '60%',
-        right: '8%',
-      },
-    },
-    {
-      id: 3,
-      title: 'Formal-Shoes',
-      style: {
-        position: 'absolute',
-        top: '80%',
-        right: '14%',
-      },
-      // width: '35%',
-    },
-  ],
-};
-
-const womenInSalwar = {
+const womenInTshirt = {
   id: 3,
-  title: 'Women-In-Salwar',
+  title: 'Women-In-Tshirt',
   image: {
-    path: womenInSalwars,
-    style: {
-      position: 'relative',
-      margin: 5,
-    },
+    path: womenInTshirts,
   },
   positions: [
     {
       id: 1,
-      title: 'Causual-Shirt',
+      title: 'T-shirts',
       style: {
         position: 'absolute',
-        top: '10%',
-        left: '65%',
+        top: '30%',
+        left: '15%',
       },
     },
     {
       id: 2,
-      title: 't-shirt',
+      title: 'JEAN-Pants',
       style: {
         position: 'absolute',
-        top: '60%',
-        left: '55%',
-      },
-    },
-    {
-      id: 3,
-      title: 'causual-shoes',
-      style: {
-        position: 'absolute',
-        top: '85%',
-        left: '40%',
+        top: '55%',
+        left: '30%',
       },
     },
   ],
 };
 
-export const womenModal = [womenInSuit, womenInFormal, womenInSalwar];
+export const womenModal = [womenInJean, womenInSuit, womenInTshirt];

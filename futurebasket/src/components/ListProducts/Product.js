@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -24,16 +24,19 @@ const Product = ({ item }) => {
               <div className={classes.colors}>
                 {item.variantsColor.map((variant) => {
                   return (
-                    <Link to = {`/product/${variant.variantId}`}>
-                    <IconButton>
-                      <Skeleton
-                        variant='circle'
-                        animation={false}
-                        width={12}
-                        height={12}
-                        style={{ backgroundColor: variant.color, marginRight: 10 }}
-                      />
-                    </IconButton>
+                    <Link to={`/product/${variant.variantId}`}>
+                      <IconButton>
+                        <Skeleton
+                          variant='circle'
+                          animation={false}
+                          width={12}
+                          height={12}
+                          style={{
+                            backgroundColor: variant.color,
+                            marginRight: 10,
+                          }}
+                        />
+                      </IconButton>
                     </Link>
                   );
                 })}
