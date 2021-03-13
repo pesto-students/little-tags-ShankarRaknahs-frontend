@@ -13,13 +13,20 @@ export const useStyles = makeStyles({
     justifyContent: 'center',
   },
   stepContainer: {
-    marginTop: '5vh',
-    marginBottom: '10vh',
+    // marginTop: '5vh',
+    marginBottom: '1vh',
     display: 'flex',
     justifyContent: 'center',
+    flexDirection: 'column',
   },
-  stepAction: {
-    display: 'flex',
-    justifyContent: 'center',
+  addressContainer: {
+    margin: '1vh',
+  },
+  stepButton: {
+    margin: '1vw',
+  },
+  paymentContainer: {
+    marginTop: '7vh',
+    marginBottom: '5vh',
   },
 });

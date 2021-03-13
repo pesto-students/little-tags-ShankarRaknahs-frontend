@@ -10,6 +10,13 @@ import Payment from './Payment';
 import OrderReview from './OrderReview';
 import { useStyles } from './styles';
 
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
+
 function getSteps() {
   return ['Shipping Address', 'Payment Details', 'Review your order'];
 }
@@ -32,6 +39,21 @@ const Process = () => {
   const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
 
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  });
+  const { vertical, horizontal, open } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState });
+  };
+
+  const handleClose = () => {
+    setState({ ...state, open: false });
+  };
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -50,39 +72,50 @@ const Process = () => {
               {getStepContent(activeStep)}
 
               <div className={classes.stepAction}>
+                <Button
+                  disabled={activeStep === 0}
+                  onClick={handleBack}
+                  className={classes.button}
+                >
+                  Back
+                </Button>
                 {activeStep === steps.length - 1 ? (
                   <Button
                     color='secondary'
-                    variant='outlined'
-                    href='/'
+                    variant='contained'
+                    onClick={handleClick({
+                      vertical: 'bottom',
+                      horizontal: 'right',
+                    })}
                     className={classes.button}
                   >
-                    Continue Shopping
+                    Pay and Conform Order
                   </Button>
                 ) : (
-                  <>
-                    <Button
-                      disabled={activeStep === 0}
-                      onClick={handleBack}
-                      className={classes.button}
-                    >
-                      Back
-                    </Button>
-                    <Button
-                      variant='contained'
-                      color='primary'
-                      onClick={handleNext}
-                      className={classes.button}
-                    >
-                      Continue
-                    </Button>
-                  </>
+                  <Button
+                    variant='contained'
+                    color='primary'
+                    onClick={handleNext}
+                    className={classes.button}
+                  >
+                    Continue
+                  </Button>
                 )}
               </div>
             </StepContent>
           </Step>
         ))}
       </Stepper>
+      <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={open}
+        onClose={handleClose}
+        key={vertical + horizontal}
+      >
+        <Alert onClose={handleClose} severity='success'>
+          Order Placed Successfully
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
