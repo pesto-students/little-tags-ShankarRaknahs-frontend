@@ -68,17 +68,7 @@ const ImageCategorizer = ({ element }) => {
             style={style}
             className={classes.button}
             startIcon={
-              <Box
-                className={classes.box}
-                // boxShadow={1}
-                // bgcolor='background.paper'
-                // style={{
-                //   width: '1.5rem',
-                //   height: '1.5rem',
-                //   borderRadius: '50%',
-                //   boxShadow: '0 0 10px #ffffff',
-                // }}
-              >
+              <Box className={classes.box}>
                 <Skeleton
                   variant='circle'
                   width={20}
