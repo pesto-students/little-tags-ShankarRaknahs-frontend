@@ -3,15 +3,14 @@ import { useLocation } from 'react-router-dom';
 import Categories from '../../components/Categories/Categories';
 import Navbar from '../../components/Navbar/Navbar';
 import List from '../../components/ListProducts/List';
-import { productsModal } from '../../components/Modals/products.modal';
-import productsJson from 'assets/products.json';
 import queryFilter from "components/ListProducts/queryfilter";
 import { useEffect } from 'react';
+
+const ItemsContext = React.createContext();
 
 function Search() {
   let params = new URLSearchParams(useLocation().search);
   let queryTerm = params.get('q');
-  // const [query, setQuery] = useState(queryTerm)
   const [items, setItems] = useState(queryFilter(queryTerm));
 
   useEffect(() => {
@@ -22,9 +21,11 @@ function Search() {
     <div>
       <Navbar />
       <Categories /> 
-      <List products={items} />
+      <ItemsContext.Provider value = {items}>
+        <List products={items} />
+      </ItemsContext.Provider>
     </div>
   );
 }
 
-export default Search;
+export { Search, ItemsContext };

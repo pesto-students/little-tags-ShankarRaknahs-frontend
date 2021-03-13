@@ -1,13 +1,20 @@
-import Product from './Product';
-import { useStyles } from './styles';
+import Product from "./Product";
+import { useStyles } from "./styles";
+import  Filter  from "./Filter";
+import { useState } from "react";
 
 const List = ({ products }) => {
   const classes = useStyles();
+  const [productsData, setProductsData] = useState(products);
+
   return (
-    <div className={classes.productsContainer}>
-      {products.map((item) => {
-        return <Product key={item.id} item={item} />;
-      })}
+    <div style={{ display: "flex", position: "relative" }}>
+      <Filter productsData = {productsData} setProductsData = {setProductsData} />
+      <div className={classes.productsContainer}>
+        {productsData.map((item) => {
+          return <Product key={item.id} item={item} />;
+        })}
+      </div>
     </div>
   );
 };

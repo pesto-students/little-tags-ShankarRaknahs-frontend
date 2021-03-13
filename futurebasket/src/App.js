@@ -4,7 +4,7 @@ import { IntlProvider } from 'react-intl';
 import { useSelector } from 'react-redux';
 import { getLocaleData } from './i18n/getLocaleData';
 import { flatten } from 'flat';
-import Search from './pages/Search/Search';
+import { Search } from './pages/Search/Search';
 import Product from './pages/Product/Product';
 
 function App() {

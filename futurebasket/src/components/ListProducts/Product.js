@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
 import { Avatar, CardHeader } from '@material-ui/core';
+import { FormattedMessage } from 'react-intl';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { useStyles } from './styles';
 
@@ -50,7 +51,7 @@ const Product = ({ item }) => {
           }
         />
         <div className={classes.details}>
-        <Link to = {`/product/${item.id}`} style = {{ "text-decoration": "none"}} >
+        <Link to = {`/product/${item.id}`} style = {{ "text-decoration": "none", "color": "inherit"}} >
           <CardActionArea className = {classes.actionArea}>
             <div className={classes.coverContainer}>
               <CardMedia
@@ -68,10 +69,13 @@ const Product = ({ item }) => {
               </Typography>
               <div className = {classes.priceDetails}>
                 <Typography variant='subtitle1' className={classes.price}>
-                  Rs. {item.price}
+                  <FormattedMessage id = {"items.currency"} defaultMessage = "Rs"></FormattedMessage>. {item.price}
                 </Typography>
-                <Typography variant='subtitle1' style = {{ "text-decoration": "line-through"}} className = {classes.originalPrice}>Rs. {item.originalPrice}</Typography>
-                <Typography className = {classes.lightText, classes.discount} >{item.discount} off</Typography>
+                <Typography variant='subtitle1' style = {{ "text-decoration": "line-through"}} className = {classes.originalPrice}>
+                <FormattedMessage id = {"items.currency"} defaultMessage = "Rs"></FormattedMessage>. {item.originalPrice}</Typography>
+                <Typography className = {classes.lightText, classes.discount} >{item.discount} 
+                  <FormattedMessage defaultMessage = "off" id = "items.off"></FormattedMessage>
+                </Typography>
               </div>
               <div className = { classes.sizeContainer }>
               <Typography className = {classes.lightText} >Size</Typography>

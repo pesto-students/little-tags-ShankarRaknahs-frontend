@@ -35,11 +35,6 @@ const SubCategory = ({ handleCategory }) => {
           </Paper>
         );
       })}
-      {/* <div>
-        <img src = {require(`assets/productImages/1-1.webp`).default} alt= "imagecdfgf"/>
-        <h2>{jsonFile[0].image}</h2>
-        <img src = {jsonFile[0].image} alt= "ooooo"/>
-      </div> */}
     </div>
   );
 };

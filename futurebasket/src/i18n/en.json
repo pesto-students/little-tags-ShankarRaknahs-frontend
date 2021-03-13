@@ -14,5 +14,15 @@
     "signInMobile": "Sign in using Mobile",
     "enterThePhoneNumber": "Enter the Phone Number",
     "with": "with"
+  },
+  "items": {
+    "currency": "Rs",
+    "filters": "filters",
+    "priceRange": "Price Range",
+    "off": "off"
+  },
+  "lang": {
+    "english": "English",
+    "spanish": "Spanish"
   }
 }
