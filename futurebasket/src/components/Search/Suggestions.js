@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import HistoryIcon from "@material-ui/icons/History";
-import { List, ListItemText, ListItem, Divider } from "@material-ui/core";
-import { useStylesForSuggestions } from "./styles";
-import { Link } from "react-router-dom";
-import { Search } from "@material-ui/icons/";
-import filterSearch from "./filterSearch";
+import React, { useEffect, useState } from 'react';
+import HistoryIcon from '@material-ui/icons/History';
+import { List, ListItemText, ListItem, Divider } from '@material-ui/core';
+import { useStylesForSuggestions } from './styles';
+import { Link } from 'react-router-dom';
+import { Search } from '@material-ui/icons/';
+import filterSearch from './filterSearch';
 
 function Suggestions({
   props: {
@@ -38,23 +38,23 @@ function Suggestions({
       style={{
         display:
           toDisplaySuggestions && (suggestions.length || suggestHistory.length)
-            ? "block"
-            : "none",
+            ? 'block'
+            : 'none',
       }}
     >
       {suggestHistory.map((suggestion) => (
         <Link
           to={`/search?q=${suggestion}`}
-          // style={{ "text-decoration": "none" }}
-          className="suggestion-link"
+          style={{ textDecoration: 'none' }}
+          className='suggestion-link'
           onClick={handleSuggestionClick}
-          key = {`${suggestion}-history`}
+          key={`${suggestion}-history`}
         >
           <ListItem
-            alignItems="flex-start"
+            alignItems='flex-start'
             className={suggestionClasses.suggestionItem}
           >
-            <HistoryIcon className = { suggestionClasses.iconStyle} />
+            <HistoryIcon className={suggestionClasses.iconStyle} />
             <ListItemText
               primary={suggestion}
               className={suggestionClasses.suggestionText}
@@ -65,16 +65,16 @@ function Suggestions({
       {suggestions.map((suggestion) => (
         <Link
           to={`/search?q=${suggestion}`}
-          // style={{ "text-decoration": "none" }}
-          className="suggestion-link"
+          style={{ textDecoration: 'none' }}
+          className='suggestion-link'
           onClick={handleSuggestionClick}
-          key = {`${suggestion}-suggestion`}
+          key={`${suggestion}-suggestion`}
         >
           <ListItem
-            alignItems="flex-start"
+            alignItems='flex-start'
             className={suggestionClasses.suggestionItem}
           >
-            <Search className = { suggestionClasses.iconStyle} />
+            <Search className={suggestionClasses.iconStyle} />
             <ListItemText
               primary={suggestion}
               className={suggestionClasses.suggestionText}
@@ -82,7 +82,7 @@ function Suggestions({
           </ListItem>
         </Link>
       ))}
-      <Divider variant="inset" component= {'span'} />
+      <Divider variant='inset' component={'span'} />
     </List>
   );
 }

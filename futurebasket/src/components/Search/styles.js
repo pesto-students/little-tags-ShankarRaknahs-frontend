@@ -7,9 +7,6 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     width: '45vw',
     height: '5vh',
-    marginRight: theme.spacing(2),
-    marginLeft: theme.spacing(2),
-    borderRadius: 30,
     fontFamily: 'Poppins',
   },
   input: {
@@ -24,13 +21,14 @@ export const useStyles = makeStyles((theme) => ({
 export const useStylesForSuggestions = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxWidth: '36ch',
+    maxWidth: 'inherit',
     backgroundColor: theme.palette.background.paper,
     paddingBottom:'0',
+    marginTop: "1px",
   },
   suggestionItem: {
     '&:hover': {
-      background: "#e1dcdc",
+      background: "#F6F2F2",
    },
    color: 'black',
    display: 'flex',
@@ -38,7 +36,6 @@ export const useStylesForSuggestions = makeStyles((theme) => ({
   },
   position : {
     position:'absolute',
-    left: '5%',
     zIndex: '1',
   },
   suggestionText:{

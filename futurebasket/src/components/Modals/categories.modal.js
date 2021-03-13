@@ -17,7 +17,7 @@ export const categories = [
     icon: otherIcon,
   },
   {
-    type: 'Jewelry',
+    type: 'Jewellery',
     icon: jewelleryIcon,
   },
 ];

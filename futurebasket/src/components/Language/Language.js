@@ -10,6 +10,7 @@ import APP from '../../config/app.config';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useDispatch } from 'react-redux'
 import { setEnglish, setSpanish } from '../../actions/locale'
+import { FormattedMessage } from 'react-intl';
 
 const LanguageInt = ({ id }) => {
   const classes = useStyles();
@@ -61,10 +62,10 @@ const LanguageInt = ({ id }) => {
             }}
           >
             <MenuItem value='en'>
-              {id === APP.DESKTOP_ID ? 'English' : 'En'}
+              {id === APP.DESKTOP_ID ? <FormattedMessage id = "lang.english" defaultMessage = "English"></FormattedMessage> : 'en'}
             </MenuItem>
             <MenuItem value='es'>
-              {id === APP.DESKTOP_ID ? 'Spanish' : 'Es'}
+              {id === APP.DESKTOP_ID ? <FormattedMessage id = "lang.spanish" defaultMessage = "spanish"></FormattedMessage> : 'es'}
             </MenuItem>
           </Select>
         </div>

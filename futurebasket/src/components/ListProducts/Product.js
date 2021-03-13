@@ -1,5 +1,5 @@
+import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
-
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -7,8 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
 import { Avatar, CardHeader } from '@material-ui/core';
+import { FormattedMessage } from 'react-intl';
 import Skeleton from '@material-ui/lab/Skeleton';
-
 import { useStyles } from './styles';
 
 const Product = ({ item }) => {
@@ -20,19 +20,24 @@ const Product = ({ item }) => {
         <CardHeader
           className={classes.header}
           title={
-            item.colors ? (
+            item.variantsColor ? (
               <div className={classes.colors}>
-                {item.colors.map((color) => {
+                {item.variantsColor.map((variant) => {
                   return (
-                    <IconButton>
-                      <Skeleton
-                        variant='circle'
-                        animation={false}
-                        width={12}
-                        height={12}
-                        style={{ backgroundColor: color, marginRight: 10 }}
-                      />
-                    </IconButton>
+                    <Link to={`/product/${variant.variantId}`}>
+                      <IconButton>
+                        <Skeleton
+                          variant='circle'
+                          animation={false}
+                          width={12}
+                          height={12}
+                          style={{
+                            backgroundColor: variant.color,
+                            marginRight: 10,
+                          }}
+                        />
+                      </IconButton>
+                    </Link>
                   );
                 })}
               </div>
@@ -48,9 +53,9 @@ const Product = ({ item }) => {
             </Avatar>
           }
         />
-
         <div className={classes.details}>
-          <CardActionArea>
+        <Link to = {`/product/${item.id}`} style = {{ "text-decoration": "none", "color": "inherit"}} >
+          <CardActionArea className = {classes.actionArea}>
             <div className={classes.coverContainer}>
               <CardMedia
                 component='img'
@@ -61,14 +66,32 @@ const Product = ({ item }) => {
             </div>
 
             <CardContent className={classes.content}>
-              <Typography noWrap variant='body2'>
+              <Typography className = {classes.lightText} variant = "span">{item.company}</Typography>
+              <Typography noWrap variant='h5'>
                 {item.title}
               </Typography>
-              <Typography variant='subtitle1' className={classes.price}>
-                Rs. {item.price}
-              </Typography>
+              <div className = {classes.priceDetails}>
+                <Typography variant='subtitle1' className={classes.price}>
+                  <FormattedMessage id = {"items.currency"} defaultMessage = "Rs"></FormattedMessage>. {item.price}
+                </Typography>
+                <Typography variant='subtitle1' style = {{ "text-decoration": "line-through"}} className = {classes.originalPrice}>
+                <FormattedMessage id = {"items.currency"} defaultMessage = "Rs"></FormattedMessage>. {item.originalPrice}</Typography>
+                <Typography className = {classes.lightText, classes.discount} >{item.discount} 
+                  <FormattedMessage defaultMessage = "off" id = "items.off"></FormattedMessage>
+                </Typography>
+              </div>
+              <div className = { classes.sizeContainer }>
+              <Typography className = {classes.lightText} >Size</Typography>
+                {item.sizes.map((size, index) => (
+                  <>
+                    <Typography className = {classes.lightText, classes.sizes} >{size}</Typography>
+                    { index !== (item.sizes.length - 1) && <Typography className = {classes.lightText } >,</Typography> }
+                  </>
+                ))}
+              </div>
             </CardContent>
           </CardActionArea>
+          </Link>
         </div>
       </Card>
     </div>

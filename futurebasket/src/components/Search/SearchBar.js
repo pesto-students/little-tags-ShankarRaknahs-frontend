@@ -47,7 +47,7 @@ const SearchBar = () => {
       if (searchInput.trim().length) {
         updateLocalStorage(searchInput);
         setToDisplaySuggestions(false);
-        history.push(`/search/${searchInput}`);
+        history.push(`/search?q=${searchInput}`);
       }
     }
   };
