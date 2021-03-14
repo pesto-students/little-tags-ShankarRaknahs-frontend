@@ -30,7 +30,7 @@ function App() {
           <Route path='/checkout'>
             <Checkout />
           </Route>
-          <Route path='/checkout'>
+          <Route path='/cart'>
             <CartView />
           </Route>
           <Route path='/'>
