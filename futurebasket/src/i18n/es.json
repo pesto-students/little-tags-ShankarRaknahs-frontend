@@ -17,9 +17,10 @@
   },
   "items": {
     "currency": "€",
-    "filters": "filtros",
+    "filter": "Filtros",
     "priceRange": "Rango de precios",
-    "off": "rebajado"
+    "off": "rebajado",
+    "apply":"Aplicar"
   },
   "lang": {
     "english": " Inglés",

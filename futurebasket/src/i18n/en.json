@@ -17,9 +17,10 @@
   },
   "items": {
     "currency": "Rs",
-    "filters": "filters",
+    "filter": "Filters",
     "priceRange": "Price Range",
-    "off": "off"
+    "off": "off",
+    "apply":"Apply"
   },
   "lang": {
     "english": "English",
