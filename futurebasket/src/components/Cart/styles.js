@@ -9,17 +9,19 @@ export const useStyles = makeStyles({
   },
   cardContainer: {
     backgroundColor: '#f0f0f7',
-    paddingInline: '4vw',
+    paddingInline: '2vw',
+    marginInline: '8vw',
   },
   cartContainer: {
     display: 'flex',
   },
   cartItem: {
-    // width: '10  0%',
+    // paddingInline: '2vw',
   },
   cover: {
-    width: 100,
-    height: 150,
+    margin: '2vw',
+    width: 80,
+    height: 100,
   },
   container: {
     display: 'flex',
@@ -56,16 +58,25 @@ export const useStyles = makeStyles({
   },
   qtyContainer: {
     marginTop: '2vh',
+    display: 'flex',
   },
   quantity: {
     fontWeight: 'bold',
     fontSize: '1em',
-    marginInline: '1vw',
+    margin: '0.8vw',
   },
   roundBtn: {
     borderRadius: 10,
   },
   productContainer: {
     marginTop: '2vh',
+    width: '100vh',
+  },
+  header: {
+    fontWeight: 'bold',
+  },
+  avatar: {
+    backgroundColor: '#f0f0f7',
+    color: '#000000',
   },
 });

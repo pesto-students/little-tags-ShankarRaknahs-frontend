@@ -2,7 +2,7 @@ import React from 'react';
 import { useStyles } from './styles';
 import CardMedia from '@material-ui/core/CardMedia';
 import Card from '@material-ui/core/Card';
-import { CardActions, CardContent } from '@material-ui/core';
+import { Avatar, CardActions, CardContent } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
@@ -28,12 +28,12 @@ const Product = ({ item }) => {
             image={item.image}
           />
           <CardContent>
-            <Typography variant='h6'>{item.title}</Typography>
-            <Typography variant='body1' className={classes.brand}>
+            <Typography variant='subtitle1'>{item.title}</Typography>
+            <Typography variant='subtitle2' className={classes.brand}>
               {item.company}
             </Typography>
             <div className={classes.priceDetails}>
-              <Typography variant='h6' className={classes.price}>
+              <Typography variant='subtitle1' className={classes.price}>
                 &#8377;{item.price}
               </Typography>
               <Typography
@@ -48,35 +48,27 @@ const Product = ({ item }) => {
               </Typography>
             </div>
             <div className={classes.qtyContainer}>
-              <Button
-                variant='outlined'
-                color='primary'
-                aria-label='reduce quantity'
-                size='small'
-                className={classes.roundBtn}
-                onClick={decreaseQty}
-              >
-                <RemoveIcon />
-              </Button>
-              <span className={classes.quantity}>{quantity}</span>
-              <Button
-                variant='outlined'
-                color='primary'
-                aria-label='increase quantity'
-                size='small'
-                className={classes.roundBtn}
-                onClick={increaseQty}
-              >
-                <AddIcon />
-              </Button>
+              <div onClick={decreaseQty}>
+                <Avatar className={classes.avatar}>
+                  <RemoveIcon />
+                </Avatar>
+              </div>
+              <Typography variant='h3' className={classes.quantity}>
+                {quantity}
+              </Typography>
+              <div onClick={increaseQty}>
+                <Avatar className={classes.avatar}>
+                  <AddIcon />
+                </Avatar>
+              </div>
             </div>
           </CardContent>
         </div>
         <CardActions>
-          <Button variant='outlined' className={classes.button}>
+          <Button variant='outlined' size='small'>
             Remove
           </Button>
-          <Button variant='outlined' className={classes.button}>
+          <Button variant='outlined' size='small'>
             Move to wishlist
           </Button>
         </CardActions>

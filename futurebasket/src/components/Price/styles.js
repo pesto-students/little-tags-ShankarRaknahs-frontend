@@ -4,7 +4,7 @@ import COLORS from '../../config/colors.config';
 export const useStyles = makeStyles({
   root: {
     padding: '2vh',
-    marginLeft: '5vw',
+    marginLeft: '3vw',
   },
   button: {
     fontWeight: 'bold',

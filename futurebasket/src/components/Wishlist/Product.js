@@ -28,12 +28,12 @@ const Product = ({ item }) => {
             image={item.image}
           />
           <CardContent>
-            <Typography variant='h6'>{item.title}</Typography>
-            <Typography variant='body1' className={classes.brand}>
+            <Typography variant='subtitle1'>{item.title}</Typography>
+            <Typography variant='subtitle1' className={classes.brand}>
               {item.company}
             </Typography>
             <div className={classes.priceDetails}>
-              <Typography variant='h6' className={classes.price}>
+              <Typography variant='subtitle2' className={classes.price}>
                 &#8377;{item.price}
               </Typography>
               <Typography
@@ -49,7 +49,7 @@ const Product = ({ item }) => {
             </div>
 
             <div>
-              <Button variant='outlined' className={classes.button}>
+              <Button variant='outlined' className={classes.secondaryButton}>
                 Remove
               </Button>
               <Button

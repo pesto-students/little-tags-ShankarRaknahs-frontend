@@ -7,15 +7,17 @@ export const useStyles = makeStyles({
   },
   cardContainer: {
     backgroundColor: '#f0f0f7',
-    paddingInline: '4vw',
+    paddingInline: '2vw',
+    marginInline: '10vw',
   },
   cartContainer: {
-    // display: 'flex',
+    display: 'flex',
     flexWrap: 'wrap',
   },
   cover: {
-    width: 150,
-    height: 200,
+    margin: '2vw',
+    width: 80,
+    height: 100,
   },
   container: {
     display: 'flex',
@@ -26,6 +28,7 @@ export const useStyles = makeStyles({
   },
   productContainer: {
     margin: '2vh',
+    width: '50vw',
   },
   brand: {
     color: '#9B9796',
@@ -57,5 +60,13 @@ export const useStyles = makeStyles({
     fontWeight: 'bold',
     marginTop: '2vh',
     marginRight: '2vw',
+  },
+  secondaryButton: {
+    marginTop: '2vh',
+    marginRight: '2vw',
+  },
+  header: {
+    fontWeight: 'bold',
+    marginLeft: '1.5vw',
   },
 });

@@ -13,8 +13,10 @@ const CartLayout = () => {
   return (
     <div className={classes.root}>
       <Card className={classes.cardContainer}>
-        <CardHeader title={<Typography variant='h6'>My cart</Typography>} />
         <CardContent>
+          <Typography variant='h5' className={classes.header}>
+            My cart (2)
+          </Typography>
           <div className={classes.cartContainer}>
             <div>
               <Product item={itemsInCart[0]} />

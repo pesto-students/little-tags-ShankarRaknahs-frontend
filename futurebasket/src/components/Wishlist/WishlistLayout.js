@@ -12,8 +12,10 @@ const WishlistLayout = () => {
   return (
     <div className={classes.root}>
       <Card className={classes.cardContainer}>
-        <CardHeader title={<Typography variant='h6'>My wishlist</Typography>} />
         <CardContent>
+          <Typography variant='h6' className={classes.header}>
+            My wishlist (4)
+          </Typography>
           <div className={classes.cartContainer}>
             <Product item={itemsInWishlist[0]} />
             <Product item={itemsInWishlist[1]} />

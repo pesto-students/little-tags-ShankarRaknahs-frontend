@@ -12,18 +12,18 @@ const PriceDetails = () => {
       <Card>
         <CardContent>
           <Typography variant='subtitle1' className={classes.header}>
-            PRICE DETAILS (1 item)
+            Price details (1 item)
           </Typography>
           <br />
-          <Typography variant='subtitle2' className={classes.subHeader}>
-            Total MRP - - - - - - - - - - - -
+          <Typography variant='subtitle1' className={classes.subHeader}>
+            Total MRP - - - - - - - - - -
           </Typography>
           <Typography variant='subtitle1' className={classes.price}>
             &#8377; 280
           </Typography>
           <br />
-          <Typography variant='subtitle2' className={classes.subHeader}>
-            Service fee- - - - - - - - - - - -
+          <Typography variant='subtitle1' className={classes.subHeader}>
+            Service fee- - - - - - - - - -
           </Typography>
           <Typography variant='subtitle1' className={classes.price}>
             &#8377; 020
@@ -31,8 +31,8 @@ const PriceDetails = () => {
           <br />
           <br />
           <br />
-          <Typography variant='subtitle2' className={classes.totalPrice}>
-            Total Amount- - - - - - - - - -
+          <Typography variant='subtitle1' className={classes.totalPrice}>
+            Total Amount- - - - -- - -
           </Typography>
           <Typography variant='subtitle1' className={classes.totalPrice}>
             &#8377; 300
