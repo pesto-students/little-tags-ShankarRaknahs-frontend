@@ -8,6 +8,7 @@ import { Search } from './pages/Search/Search';
 import Product from './pages/Product/Product';
 import Checkout from './pages/Checkout/Checkout';
 import CartView from './pages/Cart/CartView';
+import WishlistView from './pages/Wishlist/WishlistView';
 
 function App() {
   const locale = useSelector((state) => state.localeReducer);
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path='/cart'>
             <CartView />
+          </Route>
+          <Route path='/wishlist'>
+            <WishlistView />
           </Route>
           <Route path='/'>
             <Home />
