@@ -20,7 +20,10 @@
     "filter": "Filtros",
     "priceRange": "Rango de precios",
     "off": "rebajado",
-    "apply":"Aplicar"
+    "apply":"Aplicar",
+    "brand":"Marca",
+    "colors": "Colores",
+    "sizes": "Tamaños"
   },
   "lang": {
     "english": " Inglés",

@@ -11,6 +11,7 @@ import Checkout from './pages/Checkout/Checkout';
 function App() {
   const locale = useSelector((state) => state.localeReducer);
   const localeData = getLocaleData(locale);
+  
   return (
     <IntlProvider
       locale={localeData.locale}

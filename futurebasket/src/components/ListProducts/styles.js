@@ -10,7 +10,9 @@ export const useStyles = makeStyles({
   productsContainer: {
     display: 'flex',
     flexWrap: 'wrap',
-    marginTop: '1rem',
+    marginTop: '2rem',
+    width:"100%",
+    marginLeft:"2rem",
   },
   header: {
     // backgroundColor: '#ffffff',
@@ -72,14 +74,18 @@ export const useStyles = makeStyles({
   discount:{
     marginLeft: "0.5rem",
     color: 'green'
+  },
+  wishlistButton: {
+    color: "red",
   }
 });
 
 export const useFilterStyles = makeStyles((theme) => ({
   container:{
-    width: "15%",
+    width: "auto",
     position: "sticky",
-    height: "100%,"
+    height: "100%",
+    maxWidth:"30%",
   },
   subContainer:{
     marginLeft: "1rem",
@@ -114,7 +120,6 @@ export const useFilterStyles = makeStyles((theme) => ({
     maxHeight: "20vh",
     overflowY: "auto",
     overflowX: "hidden",
-    flexWrap: "nowrap",
     marginTop: "1rem"
   },
   slider: {

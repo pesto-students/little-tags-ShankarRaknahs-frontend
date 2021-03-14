@@ -79,6 +79,8 @@ function Filter({ productsData, setProductsData }) {
               max={initialPrices[1]}
             />
           </div>
+          <div className = {filterStyles.searchFilters}>
+          <FormattedMessage id = "items.brand" defaultMessage = "Brand"></FormattedMessage>
           <SearchFilters
             props={{
               productProperty: companies,
@@ -86,6 +88,9 @@ function Filter({ productsData, setProductsData }) {
               setSelectedProductProperty: setSelectedCompanies,
             }}
           />
+          </div>
+          <div className = {filterStyles.searchFilters}>
+          <FormattedMessage id = "items.colors" defaultMessage = "Colors"></FormattedMessage>
           <SearchFilters
             props={{
               productProperty: colors,
@@ -93,6 +98,9 @@ function Filter({ productsData, setProductsData }) {
               setSelectedProductProperty: setSelectedColors,
             }}
           />
+          </div>
+          <div className = {filterStyles.searchFilters}>
+          <FormattedMessage id = "items.sizes" defaultMessage = "Sizes"></FormattedMessage>
           <SearchFilters
             props={{
               productProperty: sizes,
@@ -100,6 +108,7 @@ function Filter({ productsData, setProductsData }) {
               setSelectedProductProperty: setSelectedSizes,
             }}
           />
+          </div>
           <Button
             type="submit"
             variant="contained"
