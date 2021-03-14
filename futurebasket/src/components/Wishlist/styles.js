@@ -8,11 +8,11 @@ export const useStyles = makeStyles({
   cardContainer: {
     backgroundColor: '#f0f0f7',
     paddingInline: '2vw',
-    marginInline: '10vw',
+    marginInline: '12vw',
   },
   cartContainer: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    // display: 'flex',
+    // flexWrap: 'wrap',
   },
   cover: {
     margin: '2vw',
