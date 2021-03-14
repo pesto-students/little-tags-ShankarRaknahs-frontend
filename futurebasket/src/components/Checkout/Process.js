@@ -11,7 +11,6 @@ import { useStyles } from './styles';
 
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { Paper } from '@material-ui/core';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -36,7 +35,7 @@ function getStepContent(step) {
 
 const Process = () => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
   const [state, setState] = React.useState({
