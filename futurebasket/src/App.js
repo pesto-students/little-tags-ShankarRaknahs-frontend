@@ -6,6 +6,7 @@ import { getLocaleData } from './i18n/getLocaleData';
 import { flatten } from 'flat';
 import { Search } from './pages/Search/Search';
 import Product from './pages/Product/Product';
+import Checkout from './pages/Checkout/Checkout';
 
 function App() {
   const locale = useSelector((state) => state.localeReducer);
@@ -18,11 +19,15 @@ function App() {
     >
       <Router>
         <Switch>
-          <Route path='/search'  render = {(props) => ( 
-              <Search key = {props.location.key} /> 
-            )} />
+          <Route
+            path='/search'
+            render={(props) => <Search key={props.location.key} />}
+          />
           <Route path='/product/:id'>
             <Product />
+          </Route>
+          <Route path='/checkout'>
+            <Checkout />
           </Route>
           <Route path='/'>
             <Home />
