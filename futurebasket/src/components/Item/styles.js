@@ -13,8 +13,8 @@ export const useStyles = makeStyles({
     margin: '2%',
   },
   cover: {
-    width: 400,
-    height: 400,
+    width: 300,
+    height: 450,
   },
   childCover: {
     width: 100,
@@ -29,10 +29,8 @@ export const useStyles = makeStyles({
   },
   priceDetails: {
     display: 'flex',
-    justifyContent: 'start',
+    // justifyContent: 'start',
     alignItems: 'center',
-    marginTop: '3vh',
-    marginBottom: '3vh',
   },
   discount: {
     marginLeft: '0.5rem',
@@ -46,17 +44,23 @@ export const useStyles = makeStyles({
     marginLeft: '0.5vw',
   },
   sizeContainer: {
-    marginTop: '5vh',
+    marginTop: '2vh',
     display: 'flex',
   },
   sizeButton: {
     backgroundColor: COLORS.ICON,
-    marginRight: '2vw',
+    marginRight: '0.5vw',
   },
   actionButton: {
     color: COLORS.LIGHT,
-    backgroundColor: COLORS.ACTION,
+    fontWeight: 'bold',
+    // backgroundColor: COLORS.ACTION,
     marginTop: '5vh',
+  },
+  wishlistButton: {
+    marginTop: '5vh',
+    marginLeft: '2vw',
+    fontWeight: 'bold',
   },
   detailsContainer: {
     margin: '2%',
@@ -82,5 +86,19 @@ export const useStyles = makeStyles({
   },
   sizeButton: {
     margin:"0 1rem"
-  }
+  },
+  brand: {
+    color: '#9B9796',
+  },
+  avatar: {
+    backgroundColor: '#f0f0f7',
+    marginInline: '0.5vw',
+    color: '#000000',
+  },
+  selectSize: {
+    marginTop: '1vh',
+  },
+  header: {
+    fontWeight: 'bold',
+  },
 });

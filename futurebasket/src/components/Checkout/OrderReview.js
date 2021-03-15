@@ -8,7 +8,7 @@ const OrderReview = () => {
   return (
     <div className={classes.stepContainer}>
       <Typography variant='h6'>
-        Review your Order and Make the payment to conform.
+        Review your order and make the payment to conform.
       </Typography>
     </div>
   );

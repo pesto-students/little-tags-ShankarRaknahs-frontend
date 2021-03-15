@@ -1,14 +1,14 @@
 import React from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import Process from '../../components/Checkout/Process';
+import CartLayout from '../../components/Cart/CartLayout';
 
-const Checkout = () => {
+const CartView = () => {
   return (
     <div>
       <Navbar />
-      <Process />
+      <CartLayout />
     </div>
   );
 };
 
-export default Checkout;
+export default CartView;

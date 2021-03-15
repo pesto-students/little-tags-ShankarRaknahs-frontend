@@ -3,7 +3,6 @@ import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
-import StepContent from '@material-ui/core/StepContent';
 
 import ShippingAddress from './ShippingAddress';
 import Payment from './Payment';
@@ -36,7 +35,7 @@ function getStepContent(step) {
 
 const Process = () => {
   const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(1);
+  const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
 
   const [state, setState] = React.useState({
@@ -64,48 +63,53 @@ const Process = () => {
 
   return (
     <div className={classes.root}>
-      <Stepper alternativeLabel activeStep={activeStep}>
+      <Stepper
+        alternativeLabel
+        activeStep={activeStep}
+        className={classes.stepperContainer}
+      >
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-            <StepContent>
-              {getStepContent(activeStep)}
-
-              <div className={classes.stepAction}>
-                <Button
-                  disabled={activeStep === 0}
-                  onClick={handleBack}
-                  className={classes.button}
-                >
-                  Back
-                </Button>
-                {activeStep === steps.length - 1 ? (
-                  <Button
-                    color='secondary'
-                    variant='contained'
-                    onClick={handleClick({
-                      vertical: 'bottom',
-                      horizontal: 'right',
-                    })}
-                    className={classes.button}
-                  >
-                    Pay and Conform Order
-                  </Button>
-                ) : (
-                  <Button
-                    variant='contained'
-                    color='primary'
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    Continue
-                  </Button>
-                )}
-              </div>
-            </StepContent>
+            <StepLabel className={classes.stepperLabel}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>
+      <div>
+        {getStepContent(activeStep)}
+
+        <div className={classes.stepAction}>
+          <Button
+            variant='outlined'
+            disabled={activeStep === 0}
+            onClick={handleBack}
+            className={classes.button}
+          >
+            GO back
+          </Button>
+          {activeStep === steps.length - 1 ? (
+            <Button
+              color='secondary'
+              variant='contained'
+              onClick={handleClick({
+                vertical: 'bottom',
+                horizontal: 'right',
+              })}
+              className={classes.button}
+            >
+              Pay and conform Order
+            </Button>
+          ) : (
+            <Button
+              variant='contained'
+              color='primary'
+              onClick={handleNext}
+              className={classes.button}
+            >
+              Continue
+            </Button>
+          )}
+        </div>
+      </div>
       <Snackbar
         anchorOrigin={{ vertical, horizontal }}
         open={open}
@@ -113,7 +117,7 @@ const Process = () => {
         key={vertical + horizontal}
       >
         <Alert onClose={handleClose} severity='success'>
-          Order Placed Successfully
+          Order placed successfully
         </Alert>
       </Snackbar>
     </div>

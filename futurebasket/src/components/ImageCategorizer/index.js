@@ -2,6 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
 import COLORS from '../../config/colors.config';
+import Skeleton from '@material-ui/lab/Skeleton';
+import IconButton from '@material-ui/core/IconButton';
 
 import { Box, Paper, Button } from '@material-ui/core';
 
@@ -66,25 +68,36 @@ const ImageCategorizer = ({ element }) => {
             style={style}
             className={classes.button}
             startIcon={
-              <Box
-                className={classes.box}
-                boxShadow={1}
-                bgcolor='background.paper'
-                style={{
-                  width: '1.5rem',
-                  height: '1.5rem',
-                  borderRadius: '50%',
-                  boxShadow: '0 0 10px #ffffff',
-                }}
-              >
-                <Icon className={classes.icon} key={id}>
-                  add_circle
-                </Icon>
+              <Box className={classes.box}>
+                <Skeleton
+                  variant='circle'
+                  width={20}
+                  height={20}
+                  className={classes.box}
+                  style={{ backgroundColor: COLORS.SECONDARY }}
+                >
+                  {' '}
+                  <Icon className={classes.icon} key={id}>
+                    add_circle
+                  </Icon>
+                </Skeleton>
               </Box>
             }
           >
             <span> {title} </span>
           </Button>
+          // <Button
+          //   variant='contained'
+          //   className={classes.button}
+          //   startIcon={
+          //     <Skeleton
+          //       variant='circle'
+          //       width={20}
+          //       height={20}
+          //       className={classes.icon}
+          //     />
+          //   }
+          // ></Button>
         );
       })}
     </div>

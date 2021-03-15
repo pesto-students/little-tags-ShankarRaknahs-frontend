@@ -15,6 +15,15 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Wishlist from "components/Wishlist/Wishlist";
 import { addToCart, removeToCart } from "actions/cart";
 
+function valuetext(value) {
+  return `${value}`;
+}
+
+const marks = [
+  { value: 1, label: 1 },
+  { value: 5, label: 5 },
+  { value: 10, label: 10 },
+];
 const Product = ({ item }) => {
   const MAX_QUANTITY = 5;
   const MIN_QUANTITY = 1;
@@ -90,9 +99,12 @@ const Product = ({ item }) => {
           />
         </div>
         <CardContent className={classes.content}>
-          <Typography variant="h5">{item.title}</Typography>
+          <Typography variant='h6'>{item.title}</Typography>
+          <Typography variant='body1' className={classes.brand}>
+            {item.company}
+          </Typography>
           <div className={classes.priceDetails}>
-            <Typography variant="h4" className={classes.price}>
+            <Typography variant='h6' className={classes.price}>
               &#8377;{item.price}
             </Typography>
             <Typography
@@ -100,7 +112,7 @@ const Product = ({ item }) => {
               style={{ textDecoration: "line-through" }}
               className={classes.originalPrice}
             >
-              &#8377;{item.originalPrice}
+              {item.originalPrice}
             </Typography>
             <Typography className={(classes.lightText, classes.discount)}>
               ({item.discount} off)
@@ -176,8 +188,11 @@ const Product = ({ item }) => {
         </CardContent>
       </div>
       <div className={classes.detailsContainer}>
-        <Typography variant="h6"> Product Details: </Typography>
-        <Typography variant="subtitle2">{item.details}</Typography>
+        <Typography variant='h6' className={classes.header}>
+          {' '}
+          Product details{' '}
+        </Typography>
+        <Typography variant='subtitle2'>{item.details}</Typography>
       </div>
     </Card>
   );
