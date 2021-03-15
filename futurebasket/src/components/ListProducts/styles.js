@@ -17,9 +17,6 @@ export const useStyles = makeStyles({
   header: {
     // backgroundColor: '#ffffff',
   },
-  avatar: {
-    backgroundColor: '#f0f0f7',
-  },
   colors: {
     display: 'flex',
   },
@@ -75,9 +72,6 @@ export const useStyles = makeStyles({
     marginLeft: "0.5rem",
     color: 'green'
   },
-  wishlistButton: {
-    color: "red",
-  }
 });
 
 export const useFilterStyles = makeStyles((theme) => ({

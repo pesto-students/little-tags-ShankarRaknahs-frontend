@@ -1,40 +1,18 @@
-import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import IconButton from '@material-ui/core/IconButton';
-import { Avatar, CardHeader, Tooltip } from '@material-ui/core';
+import {  CardHeader, Tooltip } from '@material-ui/core';
 import { FormattedMessage } from 'react-intl';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { useStyles } from './styles';
-import { useDispatch, useSelector } from 'react-redux'
-import { addWishlist, removeWishlist  } from '../../actions/wishlist'
-import FavoriteIcon from '@material-ui/icons/Favorite';
+import Wishlist from "components/Wishlist/Wishlist";
 
 const Product = ({ item }) => {
   const classes = useStyles();
-  const wishlist = useSelector((state) => state.wishlistReducer);
-  const [wishlisted, setWishlisted] = useState(false);
-  const dispatch = useDispatch();
-  
-  useEffect(() => {
-    let ids = wishlist.map(item => item.id);
-    setWishlisted(ids.includes(item.id));
-  }, []) 
-
-  const handleWishlistClick = (event) => {
-    if(!wishlisted){
-      dispatch(addWishlist(item));
-      setWishlisted(true);
-    } else {
-      dispatch(removeWishlist(item));
-      setWishlisted(false);
-    }    
-  }
 
   return (
     <div className={classes.root}>
@@ -70,16 +48,7 @@ const Product = ({ item }) => {
             )
           }
           action={
-            <Avatar onClick = {handleWishlistClick} className={` ${classes.avatar}  ${wishlisted && "wishlistButton"}`}>
-              <Tooltip title = "Wishlist"  placement="top" arrow>
-                <IconButton aria-label='settings'>
-                  { wishlisted ? 
-                  <FavoriteIcon  className = { classes.wishlistButton  } /> :
-                  <FavoriteBorderIcon />
-                }
-                </IconButton>
-              </Tooltip>
-            </Avatar>
+            <Wishlist item = {item} />
           }
         />
         <div className={classes.details}>

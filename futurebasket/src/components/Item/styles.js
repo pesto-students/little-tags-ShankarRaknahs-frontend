@@ -70,5 +70,17 @@ export const useStyles = makeStyles({
   quantityContainer: {
     marginTop: '5vh',
     display: 'flex',
+    alignItems: 'center'
   },
+  buttons: {
+    fontSize: "1.5rem",
+    margin: "0rem 0.5rem"
+  },
+  applyColor: {
+    color: '#2874f0',
+    border: '2px solid #2874f0 !important',
+  },
+  sizeButton: {
+    margin:"0 1rem"
+  }
 });

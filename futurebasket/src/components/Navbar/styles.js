@@ -38,4 +38,7 @@ export const useStyles = makeStyles((theme) => ({
   fab: {
     marginTop: '40%',
   },
+  avatar: {
+    backgroundColor: '#f0f0f7',
+  },
 }));
