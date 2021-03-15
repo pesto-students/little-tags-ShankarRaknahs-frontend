@@ -10,10 +10,7 @@ export const useStyles = makeStyles({
     paddingInline: '2vw',
     marginInline: '12vw',
   },
-  cartContainer: {
-    // display: 'flex',
-    // flexWrap: 'wrap',
-  },
+  cartContainer: {},
   cover: {
     margin: '2vw',
     width: 80,
