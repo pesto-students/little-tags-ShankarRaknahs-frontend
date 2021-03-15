@@ -13,9 +13,9 @@ const StyledBadge = withStyles((theme) => ({
 const Cart = () => {
   return (
     <IconButton aria-label='show notifications' color='black'>
-      <StyledBadge badgeContent={4} color="secondary">
+      {/* <StyledBadge badgeContent={4} color="secondary"> */}
         <ShoppingCart />
-      </StyledBadge>
+      {/* </StyledBadge> */}
     </IconButton>
   );
 };

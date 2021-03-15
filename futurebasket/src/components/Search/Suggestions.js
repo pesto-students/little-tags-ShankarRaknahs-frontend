@@ -21,7 +21,7 @@ function Suggestions({
 
   useEffect(() => {
     setTimeout(() => {
-      if (searchInput === inputRef.current.value && searchInput.trim().length) {
+      if (inputRef && searchInput === inputRef.current.value && searchInput.trim().length) {
         setSuggestions(filterSearch(searchInput, 7));
       }
     }, 500);

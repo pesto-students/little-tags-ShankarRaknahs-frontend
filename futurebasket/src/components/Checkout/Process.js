@@ -11,6 +11,7 @@ import { useStyles } from './styles';
 
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import { useHistory } from "react-router-dom";
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant='filled' {...props} />;
@@ -37,6 +38,7 @@ const Process = () => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const steps = getSteps();
+  let history = useHistory();
 
   const [state, setState] = React.useState({
     open: false,
@@ -60,6 +62,14 @@ const Process = () => {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  const handleOrderClick = () => {
+    setState({ open: true, ...{
+      vertical: 'bottom',
+      horizontal: 'right',} });
+    setTimeout(() => {
+      history.push('/');
+    }, 2000);
+  }
 
   return (
     <div className={classes.root}>
@@ -78,25 +88,23 @@ const Process = () => {
         {getStepContent(activeStep)}
 
         <div className={classes.stepAction}>
+          {activeStep !== 0 ? 
           <Button
             variant='outlined'
             disabled={activeStep === 0}
             onClick={handleBack}
             className={classes.button}
           >
-            GO back
-          </Button>
+            Go Back
+          </Button> : <></> }
           {activeStep === steps.length - 1 ? (
             <Button
               color='secondary'
               variant='contained'
-              onClick={handleClick({
-                vertical: 'bottom',
-                horizontal: 'right',
-              })}
+              onClick={handleOrderClick}
               className={classes.button}
             >
-              Pay and conform Order
+              Pay and Confirm Order
             </Button>
           ) : (
             <Button

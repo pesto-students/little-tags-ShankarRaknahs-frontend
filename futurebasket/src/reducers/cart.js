@@ -14,7 +14,7 @@ const cartReducer = (state = [], action) => {
                             "quantity": action.quantity
                         }
                     } else {
-                        let quantity = Math.min(prod['cart'][action.size] + action.quantity, 5);
+                        let quantity = Math.min(prod['cart'][action.size]["quantity"] + action.quantity, 5);
                         prod['cart'][action.size] = {
                             "quantity": quantity 
                         }

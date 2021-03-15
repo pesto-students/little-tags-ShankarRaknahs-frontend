@@ -6,6 +6,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import IconButton from '@material-ui/core/IconButton';
 
 import { Box, Paper, Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   image: {
@@ -63,6 +64,7 @@ const ImageCategorizer = ({ element }) => {
         const title = position.title;
 
         return (
+          <Link to= {`/search?q=${title.toLowerCase()}`}>
           <Button
             variant='contained'
             style={style}
@@ -86,6 +88,7 @@ const ImageCategorizer = ({ element }) => {
           >
             <span> {title} </span>
           </Button>
+          </Link>
           // <Button
           //   variant='contained'
           //   className={classes.button}
