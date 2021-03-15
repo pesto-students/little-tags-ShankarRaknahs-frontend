@@ -1,20 +1,25 @@
-import React from 'react';
-import { IconButton, Menu, MenuItem, AppBar, Toolbar } from '@material-ui/core';
-
-import { More } from '@material-ui/icons/';
-
-import { useStyles } from './styles';
-
-import Searchbar from '../Search/SearchBar';
-import LanguageInt from '../Language/Language';
-import Profile from '../Profile/Profile';
-import APP from '../../config/app.config';
-import Notification from '../Notifications/Notification';
-import Title from '../Title/Title';
-import Fab from '@material-ui/core/Fab';
-
-import Cart from '../Cart/Cart';
-import Wishlist from '../Wishlist/Wishlist';
+import React from "react";
+import {
+  IconButton,
+  Menu,
+  MenuItem,
+  AppBar,
+  Toolbar,
+  Tooltip,
+  Avatar,
+} from "@material-ui/core";
+import { More } from "@material-ui/icons/";
+import { useStyles } from "./styles";
+import Searchbar from "../Search/SearchBar";
+import LanguageInt from "../Language/Language";
+import Profile from "../Profile/Profile";
+import APP from "../../config/app.config";
+import Notification from "../Notifications/Notification";
+import Title from "../Title/Title";
+import Fab from "@material-ui/core/Fab";
+import Cart from "../Cart/Cart";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const classes = useStyles();
@@ -37,10 +42,10 @@ export default function Navbar() {
   const renderMobileMenu = (
     <Menu
       anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
       id={mobileMenuId}
       keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      transformOrigin={{ vertical: "top", horizontal: "right" }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
@@ -58,7 +63,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.grow}>
-      <AppBar className={classes.appbar} position='static'>
+      <AppBar className={classes.appbar} position="static">
         <Toolbar>
           <Title {...app} />
           <div className={classes.grow} />
@@ -71,11 +76,11 @@ export default function Navbar() {
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
-              aria-label='show more'
+              aria-label="show more"
               aria-controls={mobileMenuId}
-              aria-haspopup='true'
+              aria-haspopup="true"
               onClick={handleMobileMenuOpen}
-              color='inherit'
+              color="inherit"
             >
               <More className={classes.more} />
             </IconButton>
@@ -84,11 +89,25 @@ export default function Navbar() {
       </AppBar>
 
       <div className={classes.fabContainer}>
-        <Fab size='small' aria-label='add' className={classes.fab}>
-          <Cart />
+        <Fab size="small" aria-label="add" className={classes.fab}>
+          <Link to = "/cart">
+            <Tooltip title="Cart" placement="top" arrow >
+            <Avatar className={` ${classes.avatar}`}>
+              <Cart />
+              </Avatar>
+            </Tooltip>
+          </Link>
         </Fab>
-        <Fab size='small' aria-label='add' className={classes.fab}>
-          <Wishlist />
+        <Fab size="small" aria-label="add" className={classes.fab}>
+          <Link to="/wishlist">
+            <Avatar className={` ${classes.avatar}`}>
+              <Tooltip title="Wishlist" placement="top" arrow>
+                <IconButton aria-label="settings">
+                  <FavoriteBorderIcon />
+                </IconButton>
+              </Tooltip>
+            </Avatar>
+          </Link>
         </Fab>
       </div>
 

@@ -57,7 +57,7 @@ function SearchFilters({ props: { productProperty, selectedProductProperty, setS
             </Paper>
             </div>
             <div>
-            <FormGroup className = {filterStyles.searchResults} >
+            <FormGroup className = {filterStyles.searchResults} style = {{ "flexWrap": "nowrap"}}>
               {propertySearchResult.map((company) => (
                   <FormControlLabel
                     key = {company}

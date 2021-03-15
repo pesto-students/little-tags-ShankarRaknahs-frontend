@@ -4,19 +4,15 @@ import COLORS from '../../config/colors.config';
 export const useStyles = makeStyles({
   root: {
     padding: '5vh',
-    display: 'flex',
-    flexDirection: 'column',
   },
   cardContainer: {
     backgroundColor: '#f0f0f7',
     paddingInline: '2vw',
-    marginInline: '8vw',
+    marginInline: '12vw',
   },
   cartContainer: {
-    display: 'flex',
-  },
-  cartItem: {
-    // paddingInline: '2vw',
+    // display: 'flex',
+    // flexWrap: 'wrap',
   },
   cover: {
     margin: '2vw',
@@ -26,6 +22,13 @@ export const useStyles = makeStyles({
   container: {
     display: 'flex',
     padding: '1vh',
+  },
+  roundBtn: {
+    borderRadius: 10,
+  },
+  productContainer: {
+    margin: '2vh',
+    width: '50vw',
   },
   brand: {
     color: '#9B9796',
@@ -55,28 +58,15 @@ export const useStyles = makeStyles({
   },
   button: {
     fontWeight: 'bold',
-  },
-  qtyContainer: {
     marginTop: '2vh',
-    display: 'flex',
+    marginRight: '2vw',
   },
-  quantity: {
-    fontWeight: 'bold',
-    fontSize: '1em',
-    margin: '0.8vw',
-  },
-  roundBtn: {
-    borderRadius: 10,
-  },
-  productContainer: {
+  secondaryButton: {
     marginTop: '2vh',
-    width: '100vh',
+    marginRight: '2vw',
   },
   header: {
     fontWeight: 'bold',
-  },
-  avatar: {
-    backgroundColor: '#f0f0f7',
-    color: '#000000',
+    marginLeft: '1.5vw',
   },
 });

@@ -20,7 +20,10 @@
     "filter": "Filters",
     "priceRange": "Price Range",
     "off": "off",
-    "apply":"Apply"
+    "apply":"Apply",
+    "brand":"Brand",
+    "colors": "Colors",
+    "sizes": "Sizes"
   },
   "lang": {
     "english": "English",

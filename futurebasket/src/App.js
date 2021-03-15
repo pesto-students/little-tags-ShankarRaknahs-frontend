@@ -8,10 +8,12 @@ import { Search } from './pages/Search/Search';
 import Product from './pages/Product/Product';
 import Checkout from './pages/Checkout/Checkout';
 import CartView from './pages/Cart/CartView';
+import WishlistView from './pages/Wishlist/WishlistView';
 
 function App() {
   const locale = useSelector((state) => state.localeReducer);
   const localeData = getLocaleData(locale);
+  
   return (
     <IntlProvider
       locale={localeData.locale}
@@ -30,8 +32,11 @@ function App() {
           <Route path='/checkout'>
             <Checkout />
           </Route>
-          <Route path='/checkout'>
+          <Route path='/cart'>
             <CartView />
+          </Route>
+          <Route path='/wishlist'>
+            <WishlistView />
           </Route>
           <Route path='/'>
             <Home />

@@ -46,6 +46,7 @@ export const useStyles = makeStyles({
   sizeContainer: {
     marginTop: '2vh',
     display: 'flex',
+    flexDirection: "column"
   },
   sizeButton: {
     backgroundColor: COLORS.ICON,
@@ -53,8 +54,13 @@ export const useStyles = makeStyles({
   },
   actionButton: {
     color: COLORS.LIGHT,
-    backgroundColor: COLORS.ACTION,
+    fontWeight: 'bold',
     marginTop: '5vh',
+  },
+  wishlistButton: {
+    marginTop: '5vh',
+    marginLeft: '2vw',
+    fontWeight: 'bold',
   },
   detailsContainer: {
     margin: '2%',
@@ -68,6 +74,22 @@ export const useStyles = makeStyles({
   quantityContainer: {
     marginTop: '5vh',
     display: 'flex',
+    alignItems: 'center'
+  },
+  buttons: {
+    fontSize: "1.5rem",
+    margin: "0rem 0.5rem",
+  },
+  disabled: {
+    cursor: "not-allowed !important",
+    pointerEvents: "auto !important"
+  },
+  applyColor: {
+    color: '#2874f0',
+    border: '2px solid #2874f0 !important',
+  },
+  sizeButton: {
+    margin:"0 1rem"
   },
   brand: {
     color: '#9B9796',
@@ -76,5 +98,11 @@ export const useStyles = makeStyles({
     backgroundColor: '#f0f0f7',
     marginInline: '0.5vw',
     color: '#000000',
+  },
+  selectSize: {
+    marginTop: '1vh',
+  },
+  header: {
+    fontWeight: 'bold',
   },
 });
