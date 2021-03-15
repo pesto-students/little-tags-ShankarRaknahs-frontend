@@ -90,7 +90,13 @@ export default function Navbar() {
 
       <div className={classes.fabContainer}>
         <Fab size="small" aria-label="add" className={classes.fab}>
-          <Cart />
+          <Link to = "/cart">
+            <Tooltip title="Cart" placement="top" arrow >
+            <Avatar className={` ${classes.avatar}`}>
+              <Cart />
+              </Avatar>
+            </Tooltip>
+          </Link>
         </Fab>
         <Fab size="small" aria-label="add" className={classes.fab}>
           <Link to="/wishlist">
