@@ -7,13 +7,14 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import { CardHeader, Icon, Tooltip } from "@material-ui/core";
+import { CardHeader, Icon, Snackbar, Tooltip } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Wishlist from "components/Wishlist/Wishlist";
 import { addToCart, removeToCart } from "actions/cart";
+import Alert from "@material-ui/lab/Alert";
 
 function valuetext(value) {
   return `${value}`;
@@ -35,9 +36,35 @@ const Product = ({ item }) => {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("");
   const [sizesAddedToCart, setSizesAddedToCart] = useState([]);
+  const [snackbar, setsnackbar] = useState({
+    open: false,
+    vertical: 'top',
+    horizontal: 'center',
+  });
+
+  const handleClick = (newState) => {
+    setsnackbar({ open: true, ...newState });
+  };
+
+  const handleClose = () => {
+    setsnackbar({ ...snackbar, open: false });
+  };
+
+  const { vertical, horizontal, open } = snackbar;
 
   const updateCartInStore = () => {
     dispatch(addToCart(item, size, quantity ));
+  }
+  const handleCartButtonClick = () => {
+      if(size === ""){
+      handleClick({
+        vertical: 'bottom',
+        horizontal: 'right',
+      });
+     } else {
+      setSizesAddedToCart([...sizesAddedToCart, size]) 
+      updateCartInStore();
+      }
   }
 
   return (
@@ -57,38 +84,6 @@ const Product = ({ item }) => {
         <div>
           <CardHeader
             className={classes.header}
-            title={
-              item.variantsColor ? (
-                <div className={classes.colors}>
-                  {item.variantsColor.map((variant) => {
-                    return (
-                      <Link to={`/product/${variant.variantId}`}>
-                        <Tooltip
-                          title={`${variant.color}`}
-                          placement="top"
-                          arrow
-                        >
-                          <IconButton>
-                            <Skeleton
-                              variant="circle"
-                              animation={false}
-                              width={20}
-                              height={20}
-                              style={{
-                                backgroundColor: variant.color,
-                                marginRight: 10,
-                              }}
-                            />
-                          </IconButton>
-                        </Tooltip>
-                      </Link>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div></div>
-              )
-            }
             action={<Wishlist item={item} />}
           />
 
@@ -119,18 +114,48 @@ const Product = ({ item }) => {
             </Typography>
           </div>
 
+          <div>
+            {item.variantsColor ? (
+              <div className={classes.colors}>
+                <Typography variant='subtitle1' className={classes.selectSize}>
+                  Colors
+                </Typography>
+                {item.variantsColor.map((variant) => {
+                  return (
+                    <Link to={`/product/${variant.variantId}`} key = {variant.variantId}>
+                      <IconButton>
+                        <Skeleton
+                          variant='square'
+                          animation={false}
+                          width={20}
+                          height={20}
+                          style={{
+                            backgroundColor: variant.color,
+                            marginRight: 10,
+                          }}
+                        />
+                      </IconButton>
+                    </Link>
+                  );
+                })}
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </div>
           <div className={classes.sizeContainer}>
-            {/* <Typography variant='h6'>Select Size: </Typography> */}
+          <Typography variant='subtitle1' className={classes.selectSize}>
+              Select size
+            </Typography>
             <ButtonGroup aria-label="size group" color="secondary">
               {item.sizes.map((itemSize, index) => (
                 <>
                   <Button
                     variant="outlined"
                     onClick={() => setSize(itemSize)}
-                    className={classes.sizeButton}
                     className={`${size === itemSize && classes.applyColor} ${
                       classes.sizeButton
-                    }`}
+                    } ${classes.sizeButton}`}
                   >
                     {itemSize}
                   </Button>
@@ -142,7 +167,7 @@ const Product = ({ item }) => {
             <Button
               onClick={() => setQuantity(quantity - 1)}
               disabled={quantity === MIN_QUANTITY}
-              className={classes.buttons}
+              className={`${classes.buttons} ${quantity === MIN_QUANTITY && classes.disabled}`}
             >
               -
             </Button>
@@ -150,7 +175,7 @@ const Product = ({ item }) => {
             <Button
               onClick={() => setQuantity(quantity + 1)}
               disabled={quantity === MAX_QUANTITY}
-              className={classes.buttons}
+              className={`${classes.buttons} ${quantity === MAX_QUANTITY && classes.disabled}`}
             >
               +
             </Button>
@@ -160,6 +185,7 @@ const Product = ({ item }) => {
               <Link to="/cart">
                 <Button
                   variant="contained"
+                  color = "secondary"
                   size="large"
                   startIcon={<AddShoppingCartIcon />}
                   className={classes.actionButton}
@@ -171,14 +197,11 @@ const Product = ({ item }) => {
             ) : (
               <Button
                 variant="contained"
+                color = "secondary"
                 size="large"
                 startIcon={<AddShoppingCartIcon />}
-                className={classes.actionButton}
-                onClick={() => {
-                  setSizesAddedToCart([...sizesAddedToCart, size]) 
-                  updateCartInStore();
-                }}
-                disabled = {size === ""}
+                className={`${classes.actionButton} `}
+                onClick={handleCartButtonClick}
               >
                 {" "}
                 Add to cart
@@ -194,6 +217,17 @@ const Product = ({ item }) => {
         </Typography>
         <Typography variant='subtitle2'>{item.details}</Typography>
       </div>
+      <Snackbar
+        anchorOrigin={{ vertical, horizontal }}
+        open={snackbar.open}
+        onClose={handleClose}
+        key={vertical + horizontal}
+        autoHideDuration={2000}
+      >
+        <Alert onClose={handleClose}  variant="filled" severity='error'>
+          Please Select the Size.
+        </Alert>
+      </Snackbar>
     </Card>
   );
 };

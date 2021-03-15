@@ -46,6 +46,7 @@ export const useStyles = makeStyles({
   sizeContainer: {
     marginTop: '2vh',
     display: 'flex',
+    flexDirection: "column"
   },
   sizeButton: {
     backgroundColor: COLORS.ICON,
@@ -54,7 +55,6 @@ export const useStyles = makeStyles({
   actionButton: {
     color: COLORS.LIGHT,
     fontWeight: 'bold',
-    // backgroundColor: COLORS.ACTION,
     marginTop: '5vh',
   },
   wishlistButton: {
@@ -78,7 +78,11 @@ export const useStyles = makeStyles({
   },
   buttons: {
     fontSize: "1.5rem",
-    margin: "0rem 0.5rem"
+    margin: "0rem 0.5rem",
+  },
+  disabled: {
+    cursor: "not-allowed !important",
+    pointerEvents: "auto !important"
   },
   applyColor: {
     color: '#2874f0',

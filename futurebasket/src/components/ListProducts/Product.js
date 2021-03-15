@@ -6,7 +6,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import {  CardHeader, Tooltip } from '@material-ui/core';
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Avatar } from '@material-ui/core';
 import { useStyles } from './styles';
@@ -66,14 +65,6 @@ const Product = ({ item }) => {
                   title={classes.title}
                 />
               </div>
-
-              {
-                <Avatar className={classes.avatar}>
-                  <IconButton aria-label='settings'>
-                    <FavoriteBorderIcon />
-                  </IconButton>
-                </Avatar>
-              }
               <CardContent className={classes.content}>
                 <Typography className={classes.lightText} variant='span'>
                   {item.company}
