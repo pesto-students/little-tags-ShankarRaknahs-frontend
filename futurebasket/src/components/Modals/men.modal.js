@@ -13,7 +13,7 @@ const menInSport = {
   positions: [
     {
       id: 1,
-      title: 'causual-dress',
+      title: 'shirt',
       style: {
         position: 'absolute',
         top: '23%',
