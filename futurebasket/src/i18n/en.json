@@ -23,7 +23,10 @@
     "apply":"Apply",
     "brand":"Brand",
     "colors": "Colors",
-    "sizes": "Sizes"
+    "sizes": "Sizes",
+    "selectSize": "Select Size",
+    "addToCart": "Add to Cart",
+    "productDetails": "Product details"
   },
   "lang": {
     "english": "English",

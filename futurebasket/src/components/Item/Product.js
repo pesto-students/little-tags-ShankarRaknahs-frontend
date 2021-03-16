@@ -15,6 +15,7 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Wishlist from "components/Wishlist/Wishlist";
 import { addToCart, removeToCart } from "actions/cart";
 import Alert from "@material-ui/lab/Alert";
+import { FormattedMessage } from 'react-intl';
 
 function valuetext(value) {
   return `${value}`;
@@ -118,7 +119,7 @@ const Product = ({ item }) => {
             {item.variantsColor ? (
               <div className={classes.colors}>
                 <Typography variant='subtitle1' className={classes.selectSize}>
-                  Colors
+              <FormattedMessage id = {`items.colors`} defaultMessage = "Colors" >  </FormattedMessage>
                 </Typography>
                 {item.variantsColor.map((variant) => {
                   return (
@@ -145,7 +146,7 @@ const Product = ({ item }) => {
           </div>
           <div className={classes.sizeContainer}>
           <Typography variant='subtitle1' className={classes.selectSize}>
-              Select size
+              <FormattedMessage id = {`items.selectSize`} defaultMessage = "Select Size" >  </FormattedMessage>
             </Typography>
             <ButtonGroup aria-label="size group" color="secondary">
               {item.sizes.map((itemSize, index) => (
@@ -204,7 +205,8 @@ const Product = ({ item }) => {
                 onClick={handleCartButtonClick}
               >
                 {" "}
-                Add to cart
+                
+              <FormattedMessage id = {`items.addToCart`} defaultMessage = "Add to Cart" ></FormattedMessage>
               </Button>
             )}
           </div>
@@ -213,7 +215,8 @@ const Product = ({ item }) => {
       <div className={classes.detailsContainer}>
         <Typography variant='h6' className={classes.header}>
           {' '}
-          Product details{' '}
+          <FormattedMessage id = {`items.productDetails`} defaultMessage = "Product details" ></FormattedMessage>
+          {' '}
         </Typography>
         <Typography variant='subtitle2'>{item.details}</Typography>
       </div>

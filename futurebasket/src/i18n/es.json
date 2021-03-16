@@ -23,7 +23,10 @@
     "apply":"Aplicar",
     "brand":"Marca",
     "colors": "Colores",
-    "sizes": "Tamaños"
+    "sizes": "Tamaños",
+    "selectSize": "Selecciona el tamaño",
+    "addToCart": "Añadir al carrito",
+    "productDetails": "Detalles de Producto"
   },
   "lang": {
     "english": " Inglés",
